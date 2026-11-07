@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { BadgeCheck, Type, Zap } from "lucide-react";
 import { ExamplesGrid } from "@/components/examples-grid";
 import { Faq } from "@/components/faq";
 import { FontGenerator } from "@/components/font-generator";
@@ -29,13 +30,38 @@ export default function HomePage() {
         })}
       />
 
-      <section className="bg-gradient-to-b from-mist to-white">
-        <div className="mx-auto max-w-5xl px-4 pb-10 pt-6 sm:px-6 sm:pt-10">
-          <h1 className="text-3xl font-bold tracking-tight sm:text-5xl">Copy and Paste Fonts</h1>
-          <p className="mt-2 text-ink-soft sm:mt-3 sm:text-lg">
-            Type once and get {FONT_STYLES.length} font styles you can copy and paste anywhere.
-          </p>
-          <div className="mt-4 sm:mt-6">
+      <section className="bg-gradient-to-br from-accent-soft via-white to-orange-50">
+        <div className="mx-auto max-w-5xl px-4 pb-10 pt-6 sm:px-6 sm:pt-14">
+          <div className="text-center">
+            <h1 className="font-display text-[2.6rem] leading-[1.05] tracking-tight text-ink sm:text-6xl lg:text-7xl">
+              Copy and Paste{" "}
+              <span className="bg-gradient-to-r from-accent via-fuchsia-600 to-orange-600 bg-clip-text text-transparent">
+                Fonts
+              </span>
+            </h1>
+            <p className="mt-2 text-balance font-display text-lg text-ink-soft sm:mt-4 sm:text-2xl">
+              Fancy Text Generator for Bios, Captions &amp; Chats
+            </p>
+            <p className="mx-auto mt-3 hidden max-w-2xl leading-relaxed text-ink-soft sm:block sm:text-lg">
+              Type once and get {FONT_STYLES.length} font styles you can copy and paste anywhere: Instagram, TikTok,
+              Discord, WhatsApp and more.
+            </p>
+            <ul className="mt-4 flex flex-wrap justify-center gap-2 sm:mt-6 sm:gap-3" aria-label="Highlights">
+              <li className="inline-flex items-center gap-1.5 rounded-full border border-line bg-white px-3 py-1.5 text-xs font-semibold text-ink-soft shadow-sm sm:px-5 sm:py-2.5 sm:text-sm">
+                <Type size={15} aria-hidden className="text-accent" />
+                <span className="text-accent">{FONT_STYLES.length}</span> Font Styles
+              </li>
+              <li className="inline-flex items-center gap-1.5 rounded-full border border-line bg-white px-3 py-1.5 text-xs font-semibold text-ink-soft shadow-sm sm:px-5 sm:py-2.5 sm:text-sm">
+                <BadgeCheck size={15} aria-hidden className="text-accent" />
+                <span className="text-accent">100%</span> Free
+              </li>
+              <li className="inline-flex items-center gap-1.5 rounded-full border border-line bg-white px-3 py-1.5 text-xs font-semibold text-ink-soft shadow-sm sm:px-5 sm:py-2.5 sm:text-sm">
+                <Zap size={15} aria-hidden className="text-orange-600" />
+                Instant Copy
+              </li>
+            </ul>
+          </div>
+          <div className="mt-5 sm:mt-8">
             <FontGenerator placeholder="Type your text here" initialCount={16} autoFocus inputLabel="Type text to convert into fonts" />
           </div>
         </div>

@@ -1,4 +1,5 @@
 import type { Metadata, Viewport } from "next";
+import { DM_Serif_Display } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
@@ -6,6 +7,15 @@ import { CookieConsent } from "@/components/cookie-consent";
 import { JsonLd } from "@/components/json-ld";
 import { siteConfig } from "@/lib/site-config";
 import { websiteJsonLd } from "@/lib/seo";
+
+// Display font for big headings. next/font downloads it at build time and serves it
+// from this site, so visitors never connect to Google. Fallback metrics are adjusted to avoid layout shift.
+const displayFont = DM_Serif_Display({
+  weight: "400",
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-dm-serif",
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
@@ -26,7 +36,7 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang={siteConfig.language}>
+    <html lang={siteConfig.language} className={displayFont.variable}>
       <body className="flex min-h-screen flex-col">
         <a
           href="#main"
