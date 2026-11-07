@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { DM_Serif_Display } from "next/font/google";
+import { DM_Serif_Display, Great_Vibes } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
@@ -16,6 +16,14 @@ const displayFont = DM_Serif_Display({
   subsets: ["latin"],
   display: "swap",
   variable: "--font-dm-serif",
+});
+
+// Calligraphic font used only by the logo wordmark (also self-hosted).
+const logoFont = Great_Vibes({
+  weight: "400",
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-great-vibes",
 });
 
 export const metadata: Metadata = {
@@ -37,7 +45,7 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang={siteConfig.language} className={displayFont.variable}>
+    <html lang={siteConfig.language} className={`${displayFont.variable} ${logoFont.variable}`}>
       <body className="flex min-h-screen flex-col">
         <a
           href="#main"

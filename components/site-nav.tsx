@@ -91,7 +91,7 @@ export function SiteNav() {
         <nav
           id="mobile-menu"
           aria-label="Mobile"
-          className="absolute inset-x-0 top-14 max-h-[calc(100vh-3.5rem)] overflow-y-auto border-b border-line bg-white px-4 pb-6 pt-2 shadow-lg md:hidden"
+          className="absolute inset-x-0 top-16 max-h-[calc(100vh-4rem)] overflow-y-auto border-b border-line bg-white px-4 pb-6 pt-2 shadow-lg md:hidden"
         >
           <ul className="space-y-1">
             <MobileLink href="/" label="Home" pathname={pathname} />

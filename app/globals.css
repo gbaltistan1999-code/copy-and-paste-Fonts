@@ -16,12 +16,13 @@
 
 @theme inline {
   --font-display: var(--font-dm-serif), Georgia, "Times New Roman", serif;
+  --font-logo: var(--font-great-vibes), "Segoe Script", "Brush Script MT", cursive;
 }
 
 @layer base {
   html {
     -webkit-text-size-adjust: 100%;
-    scroll-padding-top: 5rem;
+    scroll-padding-top: 5.5rem;
   }
 
   body {

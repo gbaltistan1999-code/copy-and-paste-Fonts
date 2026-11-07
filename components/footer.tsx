@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { Logo } from "./logo";
 import { CookieSettingsButton } from "./cookie-settings-button";
 import { fontNav, legalNav, platformNav, siteConfig, trustNav } from "@/lib/site-config";
 import type { NavLink } from "@/types";
@@ -8,9 +9,7 @@ export function Footer() {
     <footer className="mt-16 border-t border-line bg-mist">
       <div className="mx-auto grid max-w-6xl gap-10 px-4 py-12 sm:px-6 md:grid-cols-4">
         <div>
-          <Link href="/" className="text-lg font-bold tracking-tight text-ink">
-            Copy<span className="text-accent">Font</span>Style
-          </Link>
+          <Logo size="sm" />
           <p className="mt-3 text-sm leading-relaxed text-ink-soft">
             Free copy and paste fonts made from Unicode characters. Your text is converted in your browser and never sent
             to our server.

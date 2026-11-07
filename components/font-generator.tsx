@@ -211,7 +211,7 @@ export function FontGenerator({
         {announcement}
       </div>
 
-      <div ref={resultsRef} className="scroll-mt-16">
+      <div ref={resultsRef} className="scroll-mt-20">
         {showTabs && <CategoryTabs tabs={tabs} active={tab} onSelect={selectTab} />}
 
         <div className="mt-3 flex flex-wrap items-center justify-between gap-2 px-1 text-sm text-ink-soft">
@@ -275,7 +275,7 @@ function CategoryTabs({
   }, [updateBar, tabs.length]);
 
   return (
-    <div className="sticky top-14 z-30 -mx-4 mt-6 bg-white px-4 pb-2 pt-2 sm:mx-0 sm:rounded-b-2xl sm:px-0">
+    <div className="sticky top-16 z-30 -mx-4 mt-6 bg-white px-4 pb-2 pt-2 sm:mx-0 sm:rounded-b-2xl sm:px-0">
       <div
         ref={scrollRef}
         onScroll={updateBar}
