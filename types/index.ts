@@ -17,7 +17,11 @@ export type StyleCategory =
   | "lines"
   | "glitch"
   | "decorative"
-  | "lookalike";
+  | "lookalike"
+  | "squiggle"
+  | "fantasy"
+  | "cute"
+  | "attitude";
 
 export interface FontStyle {
   /** Stable, URL-safe identifier. Used for favorites and page configuration. */

@@ -28,7 +28,7 @@ export default function OpengraphImage() {
           Copy and Paste Fonts
         </div>
         <div style={{ display: "flex", fontSize: 36, color: "#4b5563", marginTop: 20 }}>
-          Type once. Get 50+ font styles for bios, captions and chats.
+          Type once. Get 80+ font styles for bios, captions and chats.
         </div>
         <div style={{ display: "flex", marginTop: 48, height: 12, width: 160, background: "#6d28d9", borderRadius: 6 }} />
       </div>

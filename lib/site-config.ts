@@ -10,7 +10,7 @@ export const siteConfig = {
   url: "https://copyfontstyle.com",
   primaryKeyword: "Copy and Paste Fonts",
   description:
-    "Type once and get 50+ cool font styles you can copy and paste into Instagram, TikTok, Discord, games and more. Free, fast and converted privately in your browser.",
+    "Type once and get 80+ cool font styles you can copy and paste into Instagram, TikTok, Discord, games and more. Free, fast and converted privately in your browser.",
   language: "en",
   locale: "en_US",
   /**

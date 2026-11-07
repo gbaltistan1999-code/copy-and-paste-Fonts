@@ -9,6 +9,31 @@ import { zalgo } from "./zalgo";
 
 const m = (map: CharMap) => (text: string) => mapText(text, map);
 
+const ASCII_LETTER = /^[A-Za-z]$/;
+
+/** Cycles through several styles, one per Latin letter. Other characters are kept. */
+const FREAKY_MAPS: CharMap[] = [A.boldScript, A.fraktur, A.doubleStruck, A.circled, A.tinyCaps, A.boldItalicSans];
+function freakyMix(text: string): string {
+  let i = 0;
+  let out = "";
+  for (const ch of text) {
+    if (ASCII_LETTER.test(ch)) out += FREAKY_MAPS[i++ % FREAKY_MAPS.length].get(ch) ?? ch;
+    else out += ch;
+  }
+  return out;
+}
+
+/** "aLtErNaTiNg" caps on Latin letters only, so other scripts are never changed. */
+function alternatingCaps(text: string): string {
+  let i = 0;
+  let out = "";
+  for (const ch of text) {
+    if (ASCII_LETTER.test(ch)) out += i++ % 2 === 0 ? ch.toLowerCase() : ch.toUpperCase();
+    else out += ch;
+  }
+  return out;
+}
+
 export const FONT_STYLES: readonly FontStyle[] = [
   // ----- Most requested -----
   { id: "bold-serif", name: "Bold", category: "serif", convert: m(A.boldSerif) },
@@ -157,6 +182,92 @@ export const FONT_STYLES: readonly FontStyle[] = [
     note: "Borrows CJK characters that resemble Latin letters.",
     convert: m(A.asianStyle),
   },
+  {
+    id: "russian-caps",
+    name: "Russian Caps",
+    category: "lookalike",
+    note: "Cyrillic and Greek lookalikes; Russian readers see different letters.",
+    convert: m(A.russianCaps),
+  },
+  { id: "russian-smooth", name: "Russian Smooth", category: "lookalike", convert: m(A.russianSmooth) },
+  { id: "greek-cyrillic", name: "Greek Cyrillic", category: "lookalike", convert: m(A.greekCyrillic) },
+
+  // ----- Squiggle -----
+  { id: "squiggle-thai", name: "Squiggle (Thai Style)", category: "squiggle", convert: m(A.squiggleThai) },
+  { id: "squiggle-hooks", name: "Squiggle Hooks", category: "squiggle", convert: m(A.squiggleHooks) },
+  { id: "squiggle-armenian", name: "Squiggle (Armenian Style)", category: "squiggle", convert: m(A.squiggleArmenian) },
+  { id: "squiggle-curly", name: "Curly Squiggle", category: "squiggle", convert: m(A.squiggleCurly) },
+
+  // ----- Fantasy -----
+  {
+    id: "tribal",
+    name: "Tribal",
+    category: "fantasy",
+    note: "Uses Canadian Aboriginal syllabics that resemble Latin letters.",
+    convert: m(A.tribal),
+  },
+  {
+    id: "ethiopic",
+    name: "Ethiopic Fantasy",
+    category: "fantasy",
+    note: "Uses Ethiopic letters, which Amharic readers read as real letters.",
+    convert: m(A.ethiopic),
+  },
+  { id: "fantasy-strike", name: "Fantasy Strike", category: "fantasy", convert: m(A.fantasyStrike) },
+  {
+    id: "fantasy-arrows",
+    name: "Fantasy Arrows",
+    category: "fantasy",
+    convert: (t) => wrap(mapText(t, A.squiggleHooks), "➶➶➶ ", " ➷➷➷"),
+  },
+
+  // ----- Cute & emoji -----
+  { id: "cute-pets", name: "Cats & Dogs", category: "cute", convert: (t) => wrap(t, "🐱🐶 ", " 🐶🐱") },
+  { id: "cute-paws", name: "Paws & Rainbows", category: "cute", convert: (t) => wrap(mapText(t, A.squiggleThai), "🐾🌈 ", " 🌈🐾") },
+  { id: "cute-heart-eyes", name: "Heart Eyes", category: "cute", convert: (t) => wrap(mapText(t, A.tinyCaps), "😻😍 ", " 😍😻") },
+  { id: "cute-clouds", name: "Cloudy", category: "cute", convert: (t) => wrap(mapText(t, A.script), "☁︎☁︎ ", " ☁︎☁︎") },
+  { id: "cute-flowers", name: "Flower Garden", category: "cute", convert: (t) => wrap(mapText(t, A.boldScript), "🌺🌹 ", " 🌹🌺") },
+  {
+    id: "cute-sparkle-strike",
+    name: "Sparkle Strike",
+    category: "cute",
+    convert: (t) => wrap(combine(t, "̶"), "⚡✨ ", " ✨⚡"),
+  },
+  { id: "cute-bow", name: "Pink Bow", category: "cute", convert: (t) => wrap(mapText(t, A.italicSans), "🎀 ", " 🎀") },
+
+  // ----- Attitude -----
+  { id: "attitude-kaomoji", name: "Kaomoji Smile", category: "attitude", convert: (t) => wrap(t, "(๑˘︶˘๑) ", "") },
+  {
+    id: "attitude-badge",
+    name: "Black Badge",
+    category: "attitude",
+    note: "Letters are uppercase only; a few may show as emoji.",
+    convert: (t) => wrap(mapText(t, A.negativeSquared), "✗ ", " ✗"),
+  },
+  { id: "attitude-diamond", name: "Diamond Squiggle", category: "attitude", convert: (t) => wrap(mapText(t, A.squiggleArmenian), "◈ ", " ◈") },
+  { id: "attitude-royal-arrows", name: "Royal Arrows", category: "attitude", convert: (t) => wrap(t, "≿≺✦≻≾ ", " ≿≺✦≻≾") },
+  { id: "attitude-pixel", name: "Pixel Fade", category: "attitude", convert: (t) => wrap(mapText(t, A.boldSans), "░▒▓ ", " ▓▒░") },
+  { id: "attitude-vintage", name: "Vintage Swirl", category: "attitude", convert: (t) => wrap(mapText(t, A.script), "•´¯`•. ", " .•´¯`•") },
+  {
+    id: "attitude-russian-arrows",
+    name: "Decorated Russian",
+    category: "attitude",
+    convert: (t) => wrap(mapText(t, A.russianCaps), "↤↤↤ ", " ↦↦↦"),
+  },
+  {
+    id: "attitude-dance",
+    name: "Dance Party",
+    category: "attitude",
+    convert: (t) => wrap(mapText(t, A.greekCyrillic), "-漫~*'¨¯¨'*·舞~ ", " ~舞*'¨¯¨'*·~漫-"),
+  },
+  {
+    id: "freaky-mix",
+    name: "Freaky Mix",
+    category: "attitude",
+    note: "Each letter uses a different style.",
+    convert: freakyMix,
+  },
+  { id: "alternating-caps", name: "Alternating Caps", category: "attitude", convert: alternatingCaps },
 ];
 
 const byId = new Map(FONT_STYLES.map((s) => [s.id, s]));

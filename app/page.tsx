@@ -12,9 +12,9 @@ import { pageMetadata, webApplicationJsonLd, webPageJsonLd } from "@/lib/seo";
 import { siteConfig } from "@/lib/site-config";
 import { FONT_STYLES } from "@/lib/styles";
 
-const TITLE = `Copy and Paste Fonts – 50+ Cool Font Styles | ${siteConfig.name}`;
+const TITLE = `Copy and Paste Fonts – 80+ Cool Font Styles | ${siteConfig.name}`;
 const DESCRIPTION =
-  "Type once and get 50+ cool fonts to copy and paste: bold, cursive, gothic, bubble, aesthetic and more for Instagram, TikTok, Discord and games. Free and private.";
+  "Type once and get 80+ cool fonts to copy and paste: bold, cursive, gothic, bubble, aesthetic and more for Instagram, TikTok, Discord and games. Free and private.";
 
 export const metadata: Metadata = pageMetadata({ title: TITLE, description: DESCRIPTION, path: "/", absoluteTitle: true });
 

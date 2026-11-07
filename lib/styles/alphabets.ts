@@ -164,3 +164,27 @@ export const fauxCyrillic = mergeMaps(
   pairMap(LOWER, "аъсↁэfБЂіјкlмиорqѓѕтцvшхЎz"),
 );
 export const asianStyle = bothCases("卂乃匚ᗪ乇千Ꮆ卄丨ﾌҜㄥ爪几ㄖ卩Ɋ尺丂ㄒㄩᐯ山乂ㄚ乙");
+
+// ---------- Squiggle alphabets (letters from Thai, Hebrew, Armenian, Georgian, IPA…) ----------
+// Only scripts with fonts on current iOS, Android, Windows and macOS are used, so these
+// render without boxes on modern devices. Each string is exactly 26 code points (a–z).
+
+export const squiggleThai = bothCases("ค๒ς๔єŦﻮђเןкɭ๓ภ๏קợгรՇยשฬאץչ");
+export const squiggleHooks = bothCases("ąცƈɖɛʄɠɧıʝƙƖɱŋơ℘զɾʂɬųvῳҳყʑ");
+export const squiggleArmenian = bothCases("ǟɮƈɖɛʄɢɦɨʝӄʟʍռօքզʀֆȶʊʋաӼʏʐ");
+export const squiggleCurly = bothCases("αႦƈԃҽϝɠԋιʝƙʅɱɳσρϙɾʂƚυʋɯxყȥ");
+
+// ---------- Fantasy alphabets ----------
+
+/** Canadian Aboriginal Syllabics that resemble Latin capitals. */
+export const tribal = bothCases("ᗩᗷᑕᗪEᖴGᕼIᒍKᒪᗰᑎOᑭᑫᖇᔕTᑌᐯᗯ᙭Yᘔ");
+/** Ethiopic letters that resemble Latin letters. */
+export const ethiopic = bothCases("ልጌርዕቿቻኗዘጎጋጕረጠክዐየዒዪነፕሁሀሠሸሃጊ");
+/** Latin letters with strokes and hooks. */
+export const fantasyStrike = bothCases("ΔβĆĐ€₣ǤĦƗĴҜŁΜŇØƤΩŘŞŦỮVŴЖ¥Ž");
+
+// ---------- More "Russian" lookalikes (Cyrillic and Greek letters) ----------
+
+export const russianCaps = bothCases("ДБCDΞFGНIJҜLMИФPQЯSГЦVЩЖУZ");
+export const russianSmooth = bothCases("αв¢∂єƒgнιנкℓмησρqяѕтυνωχуz");
+export const greekCyrillic = bothCases("ΛBᄃDΣFGΉIJKᄂMПӨPQЯƧƬЦVЩXYZ");

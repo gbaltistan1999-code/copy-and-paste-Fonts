@@ -18,7 +18,7 @@ export const platformPages: FontPage[] = [
       "Instagram doesn't let you change fonts in your bio or captions, but you can paste styled Unicode text. Type below and copy a style that suits your profile.",
     styleIds: [
       "bold-sans", "script", "bold-script", "tiny-caps", "small-caps", "italic-sans", "fraktur", "double-struck",
-      "monospace", "fullwidth", "sparkles", "hearts", "flowers", "royal", "butterfly", "circled", "heart-between",
+      "monospace", "fullwidth", "sparkles", "hearts", "flowers", "royal", "butterfly", "circled", "heart-between", "cute-flowers", "cute-heart-eyes", "squiggle-hooks",
     ],
     placeholder: "Your Instagram name",
     sections: [
@@ -105,7 +105,7 @@ export const platformPages: FontPage[] = [
       "Stand out in member lists and server channels. Type below to style a display name, nickname or channel title, then paste it into Discord.",
     styleIds: [
       "bold-sans", "bold-serif", "monospace", "fraktur", "bold-fraktur", "script", "small-caps", "double-struck",
-      "negative-squared", "zalgo", "upside-down", "strikethrough", "sniper", "crown", "currency",
+      "negative-squared", "zalgo", "upside-down", "strikethrough", "sniper", "crown", "currency", "attitude-badge", "freaky-mix", "tribal",
     ],
     placeholder: "Server Name",
     sections: [
@@ -197,7 +197,7 @@ export const platformPages: FontPage[] = [
       "TikTok's bio and captions use one font, but you can paste styled text into them. Type below and copy a look for your profile.",
     styleIds: [
       "bold-sans", "script", "bold-script", "tiny-caps", "fullwidth", "circled", "negative-circled", "sparkles",
-      "stars", "hearts", "royal", "double-struck", "upside-down", "zalgo", "faux-cyrillic",
+      "stars", "hearts", "royal", "double-struck", "upside-down", "zalgo", "faux-cyrillic", "cute-paws", "alternating-caps", "squiggle-armenian",
     ],
     placeholder: "Your TikTok name",
     sections: [

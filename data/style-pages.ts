@@ -765,7 +765,7 @@ export const stylePages: FontPage[] = [
     styleIds: [
       "fullwidth", "lenticular", "sparkles", "hearts", "flowers", "butterfly", "royal", "stars",
       "corner-brackets", "music", "wave-between", "heart-between", "dot-between", "spaced", "tiny-caps",
-      "asian-style", "currency", "faux-cyrillic",
+      "asian-style", "currency", "faux-cyrillic", "cute-clouds", "cute-bow", "attitude-vintage", "squiggle-thai",
     ],
     placeholder: "aesthetic vibes",
     sections: [

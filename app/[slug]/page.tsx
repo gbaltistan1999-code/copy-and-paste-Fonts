@@ -91,7 +91,7 @@ export default async function FontStylePage({ params }: { params: Promise<Params
           <Link href="/" className="font-medium text-accent underline underline-offset-2">
             full copy and paste fonts generator
           </Link>{" "}
-          with 50+ styles.
+          with 80+ styles.
         </p>
       </section>
       </div>

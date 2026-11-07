@@ -202,3 +202,35 @@ describe("decorated styles", () => {
     expect(convertWith("spaced", "ab cd")).toBe("a b   c d");
   });
 });
+
+describe("squiggle, fantasy, russian and attitude styles", () => {
+  it("maps letters to the expected lookalikes", () => {
+    expect(convertWith("squiggle-thai", "abc")).toBe("ค๒ς");
+    expect(convertWith("squiggle-hooks", "Name")).toBe("ŋąɱɛ");
+    expect(convertWith("squiggle-armenian", "zoo")).toBe("ʐօօ");
+    expect(convertWith("tribal", "Wow")).toBe("ᗯOᗯ");
+    expect(convertWith("russian-caps", "russian")).toBe("ЯЦSSIДИ");
+    expect(convertWith("russian-smooth", "hey")).toBe("нєу");
+    expect(convertWith("fantasy-strike", "Lol")).toBe("ŁØŁ");
+  });
+
+  it("keeps digits and punctuation unchanged in lookalike alphabets", () => {
+    expect(convertWith("squiggle-curly", "a1!")).toBe("α1!");
+  });
+
+  it("decorates with emoji and symbols around styled text", () => {
+    expect(convertWith("cute-pets", "hi")).toBe("🐱🐶 hi 🐶🐱");
+    expect(convertWith("attitude-badge", "ok")).toBe("✗ 🅾🅺 ✗");
+    expect(convertWith("cute-sparkle-strike", "no")).toBe("⚡✨ n̶o̶ ✨⚡");
+  });
+
+  it("freaky mix cycles styles per letter and skips other characters", () => {
+    expect(convertWith("freaky-mix", "ab c")).toBe("𝓪𝔟 𝕔");
+    expect(convertWith("freaky-mix", "Привет")).toBe("Привет");
+  });
+
+  it("alternating caps only touches Latin letters", () => {
+    expect(convertWith("alternating-caps", "hello world")).toBe("hElLo WoRlD");
+    expect(convertWith("alternating-caps", "ÀB Привет")).toBe("Àb Привет");
+  });
+});
