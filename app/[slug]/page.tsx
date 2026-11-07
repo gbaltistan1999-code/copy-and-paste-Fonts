@@ -32,10 +32,9 @@ export default async function FontStylePage({ params }: { params: Promise<Params
   if (!page) notFound();
 
   const path = `/${page.slug}`;
-  const styleCount = page.styleIds.length;
 
   return (
-    <article className="mx-auto max-w-4xl px-4 pb-8 pt-5 sm:px-6">
+    <article className="mx-auto max-w-6xl px-4 pb-8 pt-5 sm:px-6">
       <JsonLd data={webPageJsonLd({ title: page.title, description: page.description, path })} />
       <JsonLd data={webApplicationJsonLd({ name: `${page.navLabel} Generator`, path, description: page.description })} />
       <Breadcrumbs
@@ -47,13 +46,15 @@ export default async function FontStylePage({ params }: { params: Promise<Params
 
       <header className="mt-4">
         <h1 className="text-3xl font-bold tracking-tight sm:text-4xl">{page.h1}</h1>
-        <p className="mt-2 text-ink-soft sm:text-lg">{page.intro}</p>
+        <p className="mt-2 max-w-3xl text-ink-soft sm:text-lg">{page.intro}</p>
       </header>
 
       <section aria-label={`${page.navLabel} generator`} className="mt-5">
-        <FontGenerator styleIds={page.styleIds} placeholder={page.placeholder} initialCount={styleCount > 12 ? 12 : undefined} />
+        <FontGenerator styleIds={page.styleIds} placeholder={page.placeholder} />
       </section>
 
+      {/* Text content stays at a comfortable reading width; only the generator uses the full width. */}
+      <div className="mx-auto max-w-4xl">
       <div className="cv-auto prose-content mt-12">
         {page.sections.map((section) => (
           <section key={section.heading}>
@@ -93,6 +94,7 @@ export default async function FontStylePage({ params }: { params: Promise<Params
           with 50+ styles.
         </p>
       </section>
+      </div>
     </article>
   );
 }

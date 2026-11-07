@@ -141,7 +141,7 @@ export function CookieConsent() {
                 />
               </span>
               <span className="mt-1 block text-sm text-ink-soft">
-                Saves the font styles you star as favorites so they stay at the top next time. Turning this off deletes
+                Saves the font styles you heart as favorites so they stay at the top next time. Turning this off deletes
                 saved favorites.
               </span>
             </label>

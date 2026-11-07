@@ -20,7 +20,7 @@ const rows = [
   {
     name: FAVORITES_STORAGE_KEY,
     category: "Preferences (optional)",
-    purpose: "Remembers the font styles you starred so they appear first. Stored only if you allow preferences.",
+    purpose: "Remembers the font styles you mark with a heart so they appear first. Stored only if you allow preferences.",
     duration: "Until you remove favorites, turn off preferences, or clear site data",
   },
 ];

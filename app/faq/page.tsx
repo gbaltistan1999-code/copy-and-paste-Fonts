@@ -96,7 +96,7 @@ const groups: { id: string; heading: string; items: FaqItem[] }[] = [
       {
         question: "What does the site store on my device?",
         answer:
-          "Only your consent choice, and, if you allow preference storage, the list of styles you starred as favorites. No cookies are set. Details are in the Cookie Policy.",
+          "Only your consent choice, and, if you allow preference storage, the list of styles you saved as favorites. No cookies are set. Details are in the Cookie Policy.",
       },
       {
         question: "How can I make styled text more accessible?",

@@ -70,7 +70,7 @@ export default function PrivacyPolicyPage() {
           the banner doesn&apos;t reappear on every page.
         </li>
         <li>
-          <strong>Favorite styles (preferences, optional):</strong> the IDs of font styles you star, stored only if you
+          <strong>Favorite styles (preferences, optional):</strong> the IDs of font styles you mark as favorites, stored only if you
           allow preference storage. It contains style names such as “bold-serif”, never your text.
         </li>
       </ul>

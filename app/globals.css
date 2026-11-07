@@ -121,4 +121,9 @@
     content-visibility: auto;
     contain-intrinsic-size: auto 2000px;
   }
+  /* Same idea for generator result sections; size is a rough placeholder until rendered. */
+  .cv-section {
+    content-visibility: auto;
+    contain-intrinsic-size: auto 640px;
+  }
 }

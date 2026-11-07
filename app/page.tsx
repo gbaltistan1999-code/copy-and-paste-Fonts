@@ -31,7 +31,7 @@ export default function HomePage() {
       />
 
       <section className="bg-gradient-to-br from-accent-soft via-white to-orange-50">
-        <div className="mx-auto max-w-5xl px-4 pb-10 pt-6 sm:px-6 sm:pt-14">
+        <div className="mx-auto max-w-6xl px-4 pb-10 pt-6 sm:px-6 sm:pt-14">
           <div className="text-center">
             <h1 className="font-display text-[2.6rem] leading-[1.05] tracking-tight text-ink sm:text-6xl lg:text-7xl">
               Copy and Paste{" "}
@@ -62,7 +62,7 @@ export default function HomePage() {
             </ul>
           </div>
           <div className="mt-5 sm:mt-8">
-            <FontGenerator placeholder="Type your text here" initialCount={16} autoFocus inputLabel="Type text to convert into fonts" />
+            <FontGenerator placeholder="Type your text here" autoFocus inputLabel="Type text to convert into fonts" />
           </div>
         </div>
       </section>
@@ -90,8 +90,8 @@ export default function HomePage() {
               <strong>Type or paste</strong> your text into the box at the top of the page.
             </li>
             <li>
-              <strong>Browse the styles.</strong> Every style updates as you type. Use “Show all” to see the full list,
-              and tap the star to pin favorites to the top.
+              <strong>Browse the styles.</strong> Every style updates as you type. Use the category tabs to jump to a style family,
+              and tap the heart to save favorites at the top.
             </li>
             <li>
               <strong>Tap Copy</strong> next to the style you like. The button confirms when it&apos;s copied.

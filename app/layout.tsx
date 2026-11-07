@@ -4,6 +4,7 @@ import "./globals.css";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import { CookieConsent } from "@/components/cookie-consent";
+import { ScrollToTop } from "@/components/scroll-to-top";
 import { JsonLd } from "@/components/json-ld";
 import { siteConfig } from "@/lib/site-config";
 import { websiteJsonLd } from "@/lib/seo";
@@ -50,6 +51,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
           {children}
         </main>
         <Footer />
+        <ScrollToTop />
         <CookieConsent />
       </body>
     </html>
