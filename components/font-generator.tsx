@@ -129,9 +129,9 @@ export function FontGenerator({
   }
 
   const tabs = [
-    { key: ALL, label: "All", count: results.length },
-    ...(favoriteResults.length > 0 ? [{ key: FAVORITES, label: "Favorites", count: favoriteResults.length }] : []),
-    ...groups.map((g) => ({ key: g.group.key, label: g.group.label, count: g.items.length })),
+    { key: ALL, label: "All" },
+    ...(favoriteResults.length > 0 ? [{ key: FAVORITES, label: "Favorites" }] : []),
+    ...groups.map((g) => ({ key: g.group.key, label: g.group.label })),
   ];
 
   return (
@@ -252,7 +252,7 @@ function CategoryTabs({
   active,
   onSelect,
 }: {
-  tabs: { key: string; label: string; count: number }[];
+  tabs: { key: string; label: string }[];
   active: string;
   onSelect: (key: string) => void;
 }) {
@@ -299,7 +299,6 @@ function CategoryTabs({
             >
               {t.key === FAVORITES && <Heart size={14} aria-hidden fill="currentColor" />}
               {t.label}
-              <span className={`text-xs ${isActive ? "text-white/85" : "text-ink-soft"}`}>{t.count}</span>
             </button>
           );
         })}

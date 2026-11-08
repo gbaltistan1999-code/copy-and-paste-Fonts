@@ -84,7 +84,7 @@ export default function HomePage() {
             you&apos;re pasting different characters, not formatting.
           </p>
 
-          <h2>How to use this font generator</h2>
+          <h2>How do you use this font generator?</h2>
           <ol>
             <li>
               <strong>Type or paste</strong> your text into the box at the top of the page.
@@ -101,7 +101,7 @@ export default function HomePage() {
             </li>
           </ol>
 
-          <h2>How copy and paste fonts work</h2>
+          <h2>How do copy and paste fonts work?</h2>
           <p>
             Unicode assigns a number, called a code point, to every character. Alongside the normal letters A to Z, it
             includes many letter-like characters created for other purposes:
@@ -143,7 +143,7 @@ export default function HomePage() {
         </section>
 
         <div className="prose-content">
-          <h2>Where copy and paste fonts work</h2>
+          <h2>Where do copy and paste fonts work?</h2>
           <p>Styled Unicode text generally displays in any field that accepts ordinary text, including:</p>
           <ul>
             <li>
@@ -167,7 +167,7 @@ export default function HomePage() {
             <li>Hashtags and search: a styled word is not the same word to a search engine.</li>
           </ul>
 
-          <h2>Why some characters appear as boxes or question marks</h2>
+          <h2>Why do some characters appear as boxes or question marks?</h2>
           <p>
             If you see ▯, �, or empty squares instead of styled letters, the device viewing the text has no font that
             includes those characters. This is sometimes called “tofu”. It happens most on older operating systems,

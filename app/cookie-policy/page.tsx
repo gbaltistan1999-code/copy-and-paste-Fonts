@@ -47,7 +47,7 @@ export default function CookiePolicyPage() {
         that isn&apos;t strictly necessary.
       </p>
 
-      <h2>What we store</h2>
+      <h2>What do we store?</h2>
       <div className="mt-4 overflow-x-auto rounded-xl border border-line">
         <table className="w-full min-w-[36rem] text-left text-sm">
           <thead className="bg-mist text-ink">

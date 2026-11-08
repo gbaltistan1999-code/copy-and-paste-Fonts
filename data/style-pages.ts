@@ -20,7 +20,7 @@ export const stylePages: FontPage[] = [
     placeholder: "Your name in cursive",
     sections: [
       {
-        heading: "What makes these letters look cursive",
+        heading: "What makes these letters look cursive?",
         paragraphs: [
           "The cursive letters here come from the Mathematical Script and Mathematical Bold Script ranges of the Unicode Mathematical Alphanumeric Symbols block (U+1D49C to U+1D503). Mathematicians use these letters as variables, which is why they exist as separate characters rather than as a font setting.",
           "Eleven script letters (ℬ, ℰ, ℱ, ℋ, ℐ, ℒ, ℳ, ℛ, ℯ, ℊ and ℴ) were encoded years earlier in the Letterlike Symbols block. The generator uses those characters automatically, so you never get an empty box where a letter should be. On some devices those eleven letters look slightly thinner or larger than their neighbors because a different system font draws them.",
@@ -97,7 +97,7 @@ export const stylePages: FontPage[] = [
     placeholder: "Make this stand out",
     sections: [
       {
-        heading: "Where bold Unicode text is useful",
+        heading: "Where is bold Unicode text useful?",
         paragraphs: [
           "Many places strip formatting or never offered it: Instagram captions and bios, X posts, LinkedIn headlines, TikTok bios, YouTube comments and game chat. Bold Unicode letters are separate characters, so the weight travels with the text instead of depending on a formatting option.",
           "Typical uses are a bold first line that acts as a headline, a few emphasized words in a long caption, or section labels such as 𝗦𝗲𝗿𝘃𝗶𝗰𝗲𝘀 and 𝗖𝗼𝗻𝘁𝗮𝗰𝘁 in a bio.",
@@ -113,7 +113,7 @@ export const stylePages: FontPage[] = [
         ],
       },
       {
-        heading: "When to use real bold instead",
+        heading: "When should you use real bold instead?",
         paragraphs: [
           "If the app supports formatting, use it. In Discord, Slack, WhatsApp and Telegram you can type markdown-style formatting such as *text* or **text** (the exact syntax varies by app), and Microsoft Word and Google Docs have a bold button. Real formatting is readable by screen readers and searchable, while Unicode bold is not.",
         ],
@@ -249,7 +249,7 @@ export const stylePages: FontPage[] = [
     placeholder: "Bubble text",
     sections: [
       {
-        heading: "Which Unicode characters make bubble letters",
+        heading: "Which Unicode characters make bubble letters?",
         list: [
           "White circled letters Ⓐ–ⓩ and numbers ①–⑨ come from the Enclosed Alphanumerics block (U+2460–U+24FF). Both uppercase and lowercase exist.",
           "Black (negative) circled letters 🅐–🅩, squared letters 🄰–🅉 and black squared letters 🅰–🆉 come from the Enclosed Alphanumeric Supplement (U+1F100–U+1F1FF). These exist only as capitals, so lowercase input becomes uppercase.",
@@ -257,7 +257,7 @@ export const stylePages: FontPage[] = [
         ],
       },
       {
-        heading: "Why some bubble letters turn into emoji",
+        heading: "Why do some bubble letters turn into emoji?",
         paragraphs: [
           "🅰, 🅱, 🅾 and 🅿 are also emoji (the blood type and parking symbols). Phones that prefer emoji presentation draw them as colorful red or blue icons while the other letters stay black, which can make a word look uneven. If that bothers you, use the white circled or squared style instead.",
         ],
@@ -324,7 +324,7 @@ export const stylePages: FontPage[] = [
     placeholder: "Small but mighty",
     sections: [
       {
-        heading: "Where small caps characters come from",
+        heading: "Where do small caps characters come from?",
         paragraphs: [
           "Unicode has no dedicated small caps alphabet. These letters are borrowed from phonetic notation: most come from the IPA Extensions (ʀ, ɢ, ʜ) and Phonetic Extensions (ᴀ, ᴅ, ᴇ) blocks, with ꜰ and ꜱ from Latin Extended-D. Because they were designed for linguists, a few letters are missing.",
         ],
@@ -397,7 +397,7 @@ export const stylePages: FontPage[] = [
     placeholder: "Something is wrong",
     sections: [
       {
-        heading: "How glitch text works",
+        heading: "How does glitch text work?",
         paragraphs: [
           "Glitch text, often called Zalgo text after an internet horror meme, is ordinary text with many combining marks stacked on each letter. Combining marks (U+0300 to U+036F) are accents designed to attach to the previous character, such as the accent in é. Unicode doesn't limit how many can be stacked, so piling dozens onto each letter makes them spill above and below the line.",
           "The generator chooses marks from three groups (above, through and below the letter) and adds more as you raise the intensity. Results are repeatable: the same text and intensity always produce the same glitch, so the preview doesn't flicker while you type.",
@@ -412,7 +412,7 @@ export const stylePages: FontPage[] = [
         ],
       },
       {
-        heading: "Where glitch text causes problems",
+        heading: "Where does glitch text cause problems?",
         list: [
           "Character limits: each glitched letter can contain 5 to 20 or more code points, so a short word can exceed a bio or name limit.",
           "Some apps strip excess combining marks or limit how tall text can render, which cuts the effect.",
@@ -471,7 +471,7 @@ export const stylePages: FontPage[] = [
     placeholder: "Flip me over",
     sections: [
       {
-        heading: "How upside-down text is made",
+        heading: "How is upside-down text made?",
         paragraphs: [
           "Unicode can't rotate characters. Instead, each letter is swapped for a different character that happens to look like it upside down, and the order of the text is reversed so it reads correctly when the screen is turned 180°.",
           "Most replacements come from the International Phonetic Alphabet, for example ɐ (turned a), ǝ (turned e), ɥ (turned h), ɯ (turned m) and ʎ (turned y). Several capitals come from the Lisu script (ꓭ, ꓷ, ꓘ) and other blocks.",
@@ -545,7 +545,7 @@ export const stylePages: FontPage[] = [
     placeholder: "cross this out",
     sections: [
       {
-        heading: "How strikethrough text works",
+        heading: "How does strikethrough text work?",
         paragraphs: [
           "Each character is followed by U+0336 COMBINING LONG STROKE OVERLAY, a mark that draws a horizontal line through the character before it. The slashed style uses U+0338 COMBINING LONG SOLIDUS OVERLAY and the wavy style uses U+0334 COMBINING TILDE OVERLAY.",
           "The generator adds the mark after every character, including spaces, so the line continues between words. Line breaks are left untouched so multi-line text stays tidy.",
@@ -619,7 +619,7 @@ export const stylePages: FontPage[] = [
     placeholder: "underline me",
     sections: [
       {
-        heading: "Which characters draw the line",
+        heading: "Which characters draw the line?",
         list: [
           "Underline: U+0332 COMBINING LOW LINE after each character.",
           "Double underline: U+0333 COMBINING DOUBLE LOW LINE.",
@@ -628,7 +628,7 @@ export const stylePages: FontPage[] = [
         ],
       },
       {
-        heading: "How it looks on different devices",
+        heading: "How does it look on different devices?",
         paragraphs: [
           "Because every character gets its own short line, the underline can look continuous in one app and dashed in another. Letters with descenders (g, j, p, q, y) may collide with the line. Apps with tighter line spacing can clip the line on the bottom row of text.",
         ],

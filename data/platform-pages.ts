@@ -23,7 +23,7 @@ export const platformPages: FontPage[] = [
     placeholder: "Your Instagram name",
     sections: [
       {
-        heading: "Where styled text goes on Instagram",
+        heading: "Where can you use styled text on Instagram?",
         list: [
           "Name field: the bold name at the top of your profile accepts most Unicode characters and is a popular place for a styled name.",
           "Bio: styled text is commonly used for headings, a tagline or labels such as 𝗟𝗶𝗻𝗸𝘀 or ᴄᴏɴᴛᴀᴄᴛ.",
@@ -123,7 +123,7 @@ export const platformPages: FontPage[] = [
         ],
       },
       {
-        heading: "Where Unicode fonts are useful on Discord",
+        heading: "Where are Unicode fonts useful on Discord?",
         list: [
           "Display names and server nicknames, which don't support markdown.",
           "Channel, category and role names, which many servers decorate with styled letters and symbols.",
@@ -202,7 +202,7 @@ export const platformPages: FontPage[] = [
     placeholder: "Your TikTok name",
     sections: [
       {
-        heading: "Where you can paste styled text on TikTok",
+        heading: "Where can you paste styled text on TikTok?",
         list: [
           "Name (display name): the name shown above your username accepts many styled characters.",
           "Bio: short, so a styled line or two goes a long way.",

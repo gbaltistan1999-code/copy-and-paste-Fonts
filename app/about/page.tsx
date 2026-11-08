@@ -17,7 +17,7 @@ export default function AboutPage() {
         to bubble letters, gothic Fraktur and glitch text, along with focused pages for individual styles and platforms.
       </p>
 
-      <h2>What we focus on</h2>
+      <h2>What do we focus on?</h2>
       <ul>
         <li>
           <strong>Speed:</strong> you can start typing the moment the page loads, and results update as you type.
@@ -38,7 +38,7 @@ export default function AboutPage() {
         </li>
       </ul>
 
-      <h2>How the generator works</h2>
+      <h2>How does the generator work?</h2>
       <p>
         Each style is a mapping from normal letters and numbers to specific Unicode code points. When you type, the page
         runs that mapping in JavaScript on your device. Characters without a styled equivalent are left unchanged.
@@ -47,7 +47,7 @@ export default function AboutPage() {
         style against uppercase and lowercase letters, digits, punctuation, emoji and non-Latin scripts.
       </p>
 
-      <h2>How we write our guides</h2>
+      <h2>How do we write our guides?</h2>
       <p>
         The explanations on this site are based on the Unicode Standard and its published code charts from the{" "}
         <a href="https://www.unicode.org/charts/" rel="noopener" target="_blank">
