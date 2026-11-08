@@ -12,13 +12,13 @@ export function Logo({ size = "md" }: { size?: "md" | "sm" }) {
     <Link href="/" aria-label={`${siteConfig.name} home`} className="group inline-flex flex-col items-start leading-none">
       <span className="flex items-end">
         <span
-          className={`font-logo ${word} bg-gradient-to-r from-accent via-fuchsia-700 to-orange-600 -mt-2 bg-clip-text pb-1 pl-0.5 pr-1 pt-2 leading-[1.2] text-transparent`}
+          className={`font-logo ${word} bg-gradient-to-r from-accent via-brand-mid to-brand-end -mt-2 bg-clip-text pb-1 pl-0.5 pr-1 pt-2 leading-[1.2] text-transparent`}
         >
           {siteConfig.name}
         </span>
         <PenNib size={nib} gradientId={`logo-nib-${size}`} />
       </span>
-      <span className="-mt-1 ml-[22%] inline-flex items-center gap-1 rounded-full border border-orange-200 bg-orange-50 px-2 py-[2px] text-[9px] font-semibold uppercase tracking-[0.14em] text-orange-800">
+      <span className="-mt-1 ml-[22%] inline-flex items-center gap-1 rounded-full border border-coral-line bg-coral-soft px-2 py-[2px] text-[9px] font-semibold uppercase tracking-[0.14em] text-coral-ink">
         <span aria-hidden="true">✦</span>
         Copy &amp; Paste Fonts
         <span aria-hidden="true">✦</span>
@@ -38,9 +38,9 @@ function PenNib({ size, gradientId }: { size: number; gradientId: string }) {
     >
       <defs>
         <linearGradient id={gradientId} x1="0" y1="0" x2="1" y2="1">
-          <stop offset="0" stopColor="#6d28d9" />
-          <stop offset="0.55" stopColor="#a21caf" />
-          <stop offset="1" stopColor="#ea580c" />
+          <stop offset="0" stopColor="#0f766e" />
+          <stop offset="0.55" stopColor="#0e7490" />
+          <stop offset="1" stopColor="#1d4ed8" />
         </linearGradient>
       </defs>
       {/* Nib tilted as if writing */}
@@ -50,7 +50,7 @@ function PenNib({ size, gradientId }: { size: number; gradientId: string }) {
         <circle cx="12" cy="10.6" r="1.6" fill="#fff" />
       </g>
       {/* Sparkle */}
-      <path d="M20.5 1.5l.6 1.6 1.6.6-1.6.6-.6 1.6-.6-1.6-1.6-.6 1.6-.6z" fill="#ea580c" />
+      <path d="M20.5 1.5l.6 1.6 1.6.6-1.6.6-.6 1.6-.6-1.6-1.6-.6 1.6-.6z" fill="#e4572e" />
     </svg>
   );
 }

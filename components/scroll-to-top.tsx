@@ -38,7 +38,7 @@ export function ScrollToTop() {
       aria-label="Back to top"
       // On phones the banner is tall, so the button waits until a choice is made;
       // on wider screens the banner is one short row and the button sits above it.
-      className={`fixed right-4 z-40 h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-accent via-fuchsia-700 to-orange-600 text-white shadow-lg shadow-accent/30 transition-transform hover:scale-105 sm:right-6 sm:h-14 sm:w-14 ${
+      className={`fixed right-4 z-40 h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-accent via-brand-mid to-brand-end text-white shadow-lg shadow-accent/30 transition-transform hover:scale-105 sm:right-6 sm:h-14 sm:w-14 ${
         bannerShowing ? "hidden md:inline-flex md:bottom-32" : "inline-flex bottom-5 sm:bottom-6"
       }`}
     >

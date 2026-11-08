@@ -30,12 +30,12 @@ export default function HomePage() {
         })}
       />
 
-      <section className="bg-gradient-to-br from-accent-soft via-white to-orange-50">
+      <section className="bg-gradient-to-br from-accent-soft via-white to-sky-50">
         <div className="mx-auto max-w-6xl px-4 pb-10 pt-6 sm:px-6 sm:pt-14">
           <div className="text-center">
             <h1 className="font-display text-[2.6rem] leading-[1.05] tracking-tight text-ink sm:text-6xl lg:text-7xl">
               Copy and Paste{" "}
-              <span className="bg-gradient-to-r from-accent via-fuchsia-600 to-orange-600 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-accent via-brand-mid to-brand-end bg-clip-text text-transparent">
                 Fonts
               </span>
             </h1>
@@ -56,7 +56,7 @@ export default function HomePage() {
                 <span className="text-accent">100%</span> Free
               </li>
               <li className="inline-flex items-center gap-1.5 rounded-full border border-line bg-white px-3 py-1.5 text-xs font-semibold text-ink-soft shadow-sm sm:px-5 sm:py-2.5 sm:text-sm">
-                <Zap size={15} aria-hidden className="text-orange-600" />
+                <Zap size={15} aria-hidden className="text-coral" />
                 Instant Copy
               </li>
             </ul>

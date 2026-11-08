@@ -22,7 +22,7 @@ export default function OpengraphImage() {
         }}
       >
         <div style={{ display: "flex", fontSize: 36, fontWeight: 700 }}>
-          Copy<span style={{ color: "#6d28d9" }}>Font</span>Style
+          Copy<span style={{ color: "#0f766e" }}>Font</span>Style
         </div>
         <div style={{ display: "flex", fontSize: 84, fontWeight: 800, marginTop: 24, letterSpacing: -2 }}>
           Copy and Paste Fonts
@@ -30,7 +30,7 @@ export default function OpengraphImage() {
         <div style={{ display: "flex", fontSize: 36, color: "#4b5563", marginTop: 20 }}>
           Type once. Get 80+ font styles for bios, captions and chats.
         </div>
-        <div style={{ display: "flex", marginTop: 48, height: 12, width: 160, background: "#6d28d9", borderRadius: 6 }} />
+        <div style={{ display: "flex", marginTop: 48, height: 12, width: 160, background: "#0f766e", borderRadius: 6 }} />
       </div>
     ),
     size,

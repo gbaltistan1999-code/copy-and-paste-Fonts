@@ -293,8 +293,8 @@ function CategoryTabs({
               aria-pressed={isActive}
               className={`inline-flex shrink-0 items-center gap-1.5 whitespace-nowrap rounded-full px-4 py-2 text-sm font-medium transition-colors ${
                 isActive
-                  ? "bg-gradient-to-r from-accent via-fuchsia-700 to-orange-700 text-white shadow"
-                  : "text-ink-soft hover:bg-orange-50 hover:text-ink"
+                  ? "bg-gradient-to-r from-accent via-brand-mid to-brand-end text-white shadow"
+                  : "text-ink-soft hover:bg-accent-soft hover:text-ink"
               }`}
             >
               {t.key === FAVORITES && <Heart size={14} aria-hidden fill="currentColor" />}
@@ -307,7 +307,7 @@ function CategoryTabs({
       <div className="mt-2 h-1.5 overflow-hidden rounded-full bg-line/70" aria-hidden="true">
         <div
           ref={barRef}
-          className="h-full w-full rounded-full bg-gradient-to-r from-accent via-fuchsia-600 to-orange-500 transition-[width] duration-150"
+          className="h-full w-full rounded-full bg-gradient-to-r from-accent via-brand-mid to-brand-end transition-[width] duration-150"
         />
       </div>
     </div>
@@ -407,7 +407,7 @@ interface StyleCardProps {
 const StyleCard = memo(function StyleCard({ style, output, plain, isFavorite, onToggleFavorite, onCopyResult }: StyleCardProps) {
   const isGlitch = style.category === "glitch";
   return (
-    <li data-style-id={style.id} className="flex min-w-0 flex-col rounded-2xl border border-line bg-white p-4 transition-[border-color,box-shadow] hover:border-orange-300 hover:shadow-md sm:p-5">
+    <li data-style-id={style.id} className="flex min-w-0 flex-col rounded-2xl border border-line bg-white p-4 transition-[border-color,box-shadow] hover:border-accent/40 hover:shadow-md sm:p-5">
       <div className="flex items-center justify-between gap-2">
         <p className="min-w-0 text-[11px] font-semibold uppercase leading-snug tracking-[0.12em] text-ink-soft">{style.name}</p>
         <div className="flex shrink-0 items-center gap-1">
@@ -416,8 +416,8 @@ const StyleCard = memo(function StyleCard({ style, output, plain, isFavorite, on
             onClick={() => onToggleFavorite(style.id)}
             aria-pressed={isFavorite}
             aria-label={`${isFavorite ? "Remove" : "Add"} ${style.name} ${isFavorite ? "from" : "to"} favorites`}
-            className={`inline-flex h-9 w-9 items-center justify-center rounded-lg transition-colors hover:bg-rose-50 ${
-              isFavorite ? "text-rose-500" : "text-rose-300 hover:text-rose-500"
+            className={`inline-flex h-9 w-9 items-center justify-center rounded-lg transition-colors hover:bg-coral-soft ${
+              isFavorite ? "text-coral" : "text-coral/60 hover:text-coral"
             }`}
           >
             <Heart size={17} aria-hidden fill={isFavorite ? "currentColor" : "none"} />

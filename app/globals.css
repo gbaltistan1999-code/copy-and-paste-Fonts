@@ -6,9 +6,16 @@
   --color-line: #e5e7eb;
   --color-paper: #ffffff;
   --color-mist: #f6f7f9;
-  --color-accent: #6d28d9;
-  --color-accent-hover: #5b21b6;
-  --color-accent-soft: #f3efff;
+  /* Brand palette "Lagoon & Coral" — change colors here only. */
+  --color-accent: #0f766e; /* deep teal: buttons, links, active states */
+  --color-accent-hover: #115e59;
+  --color-accent-soft: #e6f4f1;
+  --color-brand-mid: #0e7490; /* cyan: middle of brand gradient */
+  --color-brand-end: #1d4ed8; /* blue: end of brand gradient */
+  --color-coral: #e4572e; /* warm pop: hearts, sparkles, icons */
+  --color-coral-soft: #fff1ec;
+  --color-coral-line: #fdcfbf;
+  --color-coral-ink: #a8381a; /* coral text on light backgrounds (AA contrast) */
 
   --font-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial,
     "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";

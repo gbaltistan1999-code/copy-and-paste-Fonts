@@ -35,7 +35,7 @@ export function CopyButton({ text, label, onResult, size = "md", variant = "soli
   const sizing = size === "sm" ? "h-9 px-3 text-sm" : "h-11 min-w-[5.5rem] px-4 text-sm";
   const idle =
     variant === "soft"
-      ? "border border-orange-200 bg-orange-50 text-orange-800 hover:border-orange-300 hover:bg-orange-100"
+      ? "border border-coral-line bg-coral-soft text-coral-ink hover:border-coral hover:bg-coral-line/50"
       : "bg-accent text-white hover:bg-accent-hover";
 
   return (
@@ -44,7 +44,7 @@ export function CopyButton({ text, label, onResult, size = "md", variant = "soli
       onClick={handleClick}
       aria-label={copied ? `${label} – copied` : label}
       className={`inline-flex shrink-0 items-center justify-center gap-1.5 rounded-lg font-semibold transition-colors ${sizing} ${
-        copied ? "border border-emerald-600 bg-emerald-600 text-white" : idle
+        copied ? "border border-accent bg-accent text-white" : idle
       }`}
     >
       {copied ? <Check size={16} aria-hidden /> : <Copy size={16} aria-hidden />}
