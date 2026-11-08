@@ -35,6 +35,8 @@ export const metadata: Metadata = {
   description: siteConfig.description,
   applicationName: siteConfig.name,
   formatDetection: { telephone: false, email: false, address: false },
+  // Google Search Console ownership verification (public token, safe to commit).
+  verification: { google: "b6HdJil3ybZKYawZdp9XbPqjYyjdk6ijQbPPzOxXVq8" },
 };
 
 export const viewport: Viewport = {
