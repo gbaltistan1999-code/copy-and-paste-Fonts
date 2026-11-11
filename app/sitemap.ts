@@ -2,22 +2,15 @@ import type { MetadataRoute } from "next";
 import { fontPages } from "@/data/pages";
 import { blogPosts } from "@/data/blog";
 import { authorPath, authors } from "@/data/authors";
-import { homeImages } from "@/data/home";
 import { absoluteUrl } from "@/lib/site-config";
 
 /**
  * Only canonical, indexable pages. Uses the configured domain, never env vars.
- * Pages with content images list them under `images`, which Next.js writes as
- * <image:image> entries (Google image sitemap extension) in the same sitemap.xml.
+ * Images are listed separately in /image-sitemap.xml (see app/image-sitemap.xml/route.ts).
  */
 export default function sitemap(): MetadataRoute.Sitemap {
-  const core: { path: string; priority: number; changeFrequency: "weekly" | "monthly" | "yearly"; images?: string[] }[] = [
-    {
-      path: "/",
-      priority: 1,
-      changeFrequency: "weekly",
-      images: Object.values(homeImages).map((i) => absoluteUrl(i.src)),
-    },
+  const core: { path: string; priority: number; changeFrequency: "weekly" | "monthly" | "yearly" }[] = [
+    { path: "/", priority: 1, changeFrequency: "weekly" },
     { path: "/blog", priority: 0.6, changeFrequency: "weekly" },
     { path: "/faq", priority: 0.6, changeFrequency: "monthly" },
     { path: "/about", priority: 0.4, changeFrequency: "yearly" },
@@ -29,12 +22,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   ];
 
   return [
-    ...core.map((c) => ({
-      url: absoluteUrl(c.path),
-      priority: c.priority,
-      changeFrequency: c.changeFrequency,
-      ...(c.images && { images: c.images }),
-    })),
+    ...core.map((c) => ({ url: absoluteUrl(c.path), priority: c.priority, changeFrequency: c.changeFrequency })),
     ...fontPages.map((p) => ({
       url: absoluteUrl(`/${p.slug}`),
       priority: p.kind === "style" ? 0.8 : 0.7,
@@ -45,13 +33,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: p.dateModified,
       priority: 0.7,
       changeFrequency: "monthly" as const,
-      images: [absoluteUrl(p.image.src)],
     })),
     ...authors.map((a) => ({
       url: absoluteUrl(authorPath(a)),
       priority: 0.4,
       changeFrequency: "monthly" as const,
-      images: [absoluteUrl(a.image.src)],
     })),
   ];
 }
