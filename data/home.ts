@@ -1,5 +1,21 @@
 import type { ExampleItem, FaqItem } from "@/types";
 
+/** Illustrations in the homepage content. Also listed in sitemap.xml as image entries. */
+export const homeImages = {
+  styles: {
+    src: "/home/copy-and-paste-font-styles.png",
+    width: 1672,
+    height: 941,
+    alt: "The word Style shown in five copy and paste font styles: bold, cursive script, gothic, bubble and spaced capitals.",
+  },
+  steps: {
+    src: "/home/how-to-copy-and-paste-fonts.png",
+    width: 1733,
+    height: 907,
+    alt: "How to use the font generator in three steps: 1, type your text; 2, get styles to choose from; 3, paste the styled text into a message.",
+  },
+} as const;
+
 export const homeSamples: ExampleItem[] = [
   { label: "Good vibes", text: "Good vibes only", styleId: "script" },
   { label: "Bold headline", text: "BIG NEWS", styleId: "bold-sans" },

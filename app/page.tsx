@@ -7,7 +7,7 @@ import { Faq } from "@/components/faq";
 import { FontGenerator } from "@/components/font-generator";
 import { JsonLd } from "@/components/json-ld";
 import { PageLinks } from "@/components/page-links";
-import { homeFaqs, homeSamples } from "@/data/home";
+import { homeFaqs, homeImages, homeSamples } from "@/data/home";
 import { platformPages, stylePages } from "@/data/pages";
 import { pageMetadata, webApplicationJsonLd, webPageJsonLd } from "@/lib/seo";
 import { siteConfig } from "@/lib/site-config";
@@ -85,20 +85,16 @@ export default function HomePage() {
             you&apos;re pasting different characters, not formatting.
           </p>
           <Image
-            src="/home/copy-and-paste-font-styles.png"
-            width={1672}
-            height={941}
-            alt="The word Style shown in five copy and paste font styles: bold, cursive script, gothic, bubble and spaced capitals."
+            {...homeImages.styles}
+            alt={homeImages.styles.alt}
             sizes="(min-width: 896px) 832px, 100vw"
             className="mt-6 h-auto w-full rounded-2xl border border-line"
           />
 
           <h2>How do you use this font generator?</h2>
           <Image
-            src="/home/how-to-copy-and-paste-fonts.png"
-            width={1733}
-            height={907}
-            alt="How to use the font generator in three steps: 1, type your text; 2, get styles to choose from; 3, paste the styled text into a message."
+            {...homeImages.steps}
+            alt={homeImages.steps.alt}
             sizes="(min-width: 896px) 832px, 100vw"
             className="mt-4 h-auto w-full rounded-2xl border border-line"
           />
