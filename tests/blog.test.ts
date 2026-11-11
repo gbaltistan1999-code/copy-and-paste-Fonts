@@ -1,6 +1,15 @@
 import { describe, expect, it } from "vitest";
 import { blogPosts, formatPostDate, instagramCaptionCount, instagramCaptionGroups } from "@/data/blog";
 import { authors, getAuthor } from "@/data/authors";
+import {
+  CAPTION_FONT_OPTIONS,
+  MIXED_STYLE_IDS,
+  assignMixedStyles,
+  captionStyleId,
+  captionText,
+  styleCaption,
+} from "@/lib/caption-styles";
+import { getStyle } from "@/lib/styles";
 
 describe("blog posts", () => {
   it("has unique, valid slugs, titles and descriptions", () => {
@@ -41,8 +50,43 @@ describe("instagram captions post", () => {
     expect(post.title.startsWith(`${instagramCaptionCount} `)).toBe(true);
   });
 
+  it("stores every caption as plain, readable words", () => {
+    for (const c of instagramCaptionGroups.flatMap((g) => g.captions)) {
+      // No math-alphanumeric, circled or small-caps letters in the stored text.
+      expect(captionText(c)).not.toMatch(/[\u{1D400}-\u{1D7FF}Ⓐ-ⓩᴀ-ᴫꜰ-ꟿ]/u);
+    }
+  });
+
+  const all = instagramCaptionGroups.flatMap((g) => g.captions);
+  const mixed = assignMixedStyles(all);
+
+  it("keeps the writer's original look for pinned captions", () => {
+    const styledAs = (t: string) => {
+      const i = all.findIndex((c) => captionText(c) === t);
+      return styleCaption(all[i], mixed[i], "mixed");
+    };
+    expect(styledAs("golden hour thoughts")).toBe("𝓰𝓸𝓵𝓭𝓮𝓷 𝓱𝓸𝓾𝓻 𝓽𝓱𝓸𝓾𝓰𝓱𝓽𝓼");
+    expect(styledAs("less noise, more peace")).toBe("ʟᴇꜱꜱ ɴᴏɪꜱᴇ, ᴍᴏʀᴇ ᴘᴇᴀᴄᴇ");
+    expect(styledAs("slow mornings are my favorite")).toBe("𝘴𝘭𝘰𝘸 𝘮𝘰𝘳𝘯𝘪𝘯𝘨𝘴 𝘢𝘳𝘦 𝘮𝘺 𝘧𝘢𝘷𝘰𝘳𝘪𝘵𝘦");
+    expect(styledAs("stay sweet")).toBe("ⓢⓣⓐⓨ ⓢⓦⓔⓔⓣ");
+    expect(styledAs("Home is wherever I'm happy")).toBe("𝘏𝘰𝘮𝘦 𝘪𝘴 𝘸𝘩𝘦𝘳𝘦𝘷𝘦𝘳 𝘐'𝘮 𝘩𝘢𝘱𝘱𝘺");
+    expect(styledAs("Bet on yourself.")).toBe("𝗕𝗲𝘁 𝗼𝗻 𝘆𝗼𝘂𝗿𝘀𝗲𝗹𝗳.");
+  });
+
+  it("gives neighboring captions different fonts in Mixed mode and supports every picker option", () => {
+    expect(mixed.length).toBe(all.length);
+    for (let i = 1; i < mixed.length; i++) expect(mixed[i], `caption ${i}`).not.toBe(mixed[i - 1]);
+    expect(captionStyleId(mixed[0], "plain")).toBeNull();
+    expect(captionStyleId(mixed[0], "fraktur")).toBe("fraktur");
+    for (const id of [...MIXED_STYLE_IDS, ...CAPTION_FONT_OPTIONS.map((o) => o.id)]) {
+      if (id === "mixed" || id === "plain") continue;
+      expect(getStyle(id), id).toBeDefined();
+    }
+    expect(styleCaption("Just vibing.", mixed[0], "plain")).toBe("Just vibing.");
+  });
+
   it("has no duplicate captions or group ids", () => {
-    const all = instagramCaptionGroups.flatMap((g) => g.captions);
+    const all = instagramCaptionGroups.flatMap((g) => g.captions.map(captionText));
     expect(new Set(all).size).toBe(all.length);
     const ids = instagramCaptionGroups.map((g) => g.id);
     expect(new Set(ids).size).toBe(ids.length);

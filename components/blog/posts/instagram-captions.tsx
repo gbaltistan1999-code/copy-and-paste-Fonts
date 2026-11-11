@@ -1,6 +1,14 @@
 import Link from "next/link";
-import { CaptionList } from "@/components/blog/caption-list";
+import { CaptionFontPicker, CaptionFontProvider, CaptionList } from "@/components/blog/caption-list";
 import { instagramCaptionCount, instagramCaptionGroups } from "@/data/blog";
+import { assignMixedStyles } from "@/lib/caption-styles";
+
+/** "Mixed" fonts are assigned across the whole post, then split back into groups. */
+const allMixed = assignMixedStyles(instagramCaptionGroups.flatMap((g) => g.captions));
+const groupMixed = instagramCaptionGroups.map((_, gi) => {
+  const start = instagramCaptionGroups.slice(0, gi).reduce((n, g) => n + g.captions.length, 0);
+  return allMixed.slice(start, start + instagramCaptionGroups[gi].captions.length);
+});
 
 /** Body of /blog/instagram-captions (everything between the hero image and the FAQ). */
 export function InstagramCaptionsPost() {
@@ -67,15 +75,24 @@ export function InstagramCaptionsPost() {
         </li>
       </ul>
 
-      {instagramCaptionGroups.map((g) => (
-        <section key={g.id} aria-labelledby={g.id} className="scroll-mt-20">
-          <h2 id={g.id} className="scroll-mt-20">
-            {g.heading}
-          </h2>
-          {g.intro && <p>{g.intro}</p>}
-          <CaptionList captions={g.captions} />
-        </section>
-      ))}
+      <CaptionFontProvider>
+        <div>
+          <p className="!mt-8">
+            Every caption below is shown in a different font, ready to copy and paste. Want them all in one style? Pick
+            a font and every caption switches to it. Choose <strong>Plain</strong> for normal text.
+          </p>
+          <CaptionFontPicker />
+          {instagramCaptionGroups.map((g, gi) => (
+            <section key={g.id} aria-labelledby={g.id}>
+              <h2 id={g.id} className="scroll-mt-32">
+                {g.heading}
+              </h2>
+              {g.intro && <p>{g.intro}</p>}
+              <CaptionList captions={g.captions} mixedIds={groupMixed[gi]} />
+            </section>
+          ))}
+        </div>
+      </CaptionFontProvider>
 
       <h2 id="style-with-fonts" className="scroll-mt-20">
         How to style your Instagram captions with fancy fonts

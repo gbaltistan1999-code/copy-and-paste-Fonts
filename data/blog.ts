@@ -1,4 +1,5 @@
 import type { FaqItem } from "@/types";
+import type { Caption } from "@/lib/caption-styles";
 
 export interface BlogImage {
   /** Path under /public. */
@@ -29,7 +30,7 @@ export interface CaptionGroup {
   id: string;
   heading: string;
   intro?: string;
-  captions: string[];
+  captions: Caption[];
 }
 
 /**
@@ -64,14 +65,14 @@ export const instagramCaptionGroups: CaptionGroup[] = [
     heading: "Aesthetic Instagram captions",
     intro: "Calm, dreamy lines that pair well with cursive or small caps fonts.",
     captions: [
-      "𝓰𝓸𝓵𝓭𝓮𝓷 𝓱𝓸𝓾𝓻 𝓽𝓱𝓸𝓾𝓰𝓱𝓽𝓼",
+      { text: "golden hour thoughts", style: "bold-script" },
       "collecting moments, not things",
       "☾ soft light, slow days ☽",
       "a little bit of magic in the ordinary",
-      "ʟᴇꜱꜱ ɴᴏɪꜱᴇ, ᴍᴏʀᴇ ᴘᴇᴀᴄᴇ",
+      { text: "less noise, more peace", style: "tiny-caps" },
       "painting my days in pastel",
       "where the sky meets my daydreams",
-      "𝘴𝘭𝘰𝘸 𝘮𝘰𝘳𝘯𝘪𝘯𝘨𝘴 𝘢𝘳𝘦 𝘮𝘺 𝘧𝘢𝘷𝘰𝘳𝘪𝘵𝘦",
+      { text: "slow mornings are my favorite", style: "italic-sans" },
       "the sun always knows how to find me",
       "soft heart, clear mind",
       "quiet places, loud thoughts",
@@ -119,7 +120,7 @@ export const instagramCaptionGroups: CaptionGroup[] = [
       "Cotton candy skies and good days.",
       "Pinky promise this is a good one.",
       "Bubbly by nature.",
-      "ⓢⓣⓐⓨ ⓢⓦⓔⓔⓣ",
+      { text: "stay sweet", style: "circled" },
       "Soft, sweet and a little bit extra.",
     ],
   },
@@ -180,7 +181,7 @@ export const instagramCaptionGroups: CaptionGroup[] = [
       "Jet lag is worth it.",
       "Adventure looks good on me.",
       "This view never gets old.",
-      "𝘏𝘰𝘮𝘦 𝘪𝘴 𝘸𝘩𝘦𝘳𝘦𝘷𝘦𝘳 𝘐'𝘮 𝘩𝘢𝘱𝘱𝘺",
+      { text: "Home is wherever I'm happy", style: "italic-sans" },
       "Running away for the weekend.",
       "Road trip playlist: loading.",
       "Postcards from somewhere beautiful.",
@@ -211,7 +212,7 @@ export const instagramCaptionGroups: CaptionGroup[] = [
     id: "confident",
     heading: "Confident and bold Instagram captions",
     captions: [
-      "𝗕𝗲𝘁 𝗼𝗻 𝘆𝗼𝘂𝗿𝘀𝗲𝗹𝗳.",
+      { text: "Bet on yourself.", style: "bold-sans" },
       "Built different.",
       "Doing it for me.",
       "Not perfect, just unstoppable.",
