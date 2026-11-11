@@ -25,6 +25,7 @@ export const siteConfig = {
 } as const;
 
 export const fontNav: NavLink[] = [
+  { href: "/fancy-text-generator", label: "Fancy Text Generator" },
   { href: "/cursive-fonts", label: "Cursive Fonts" },
   { href: "/bold-font", label: "Bold Font" },
   { href: "/italic-font", label: "Italic Font" },

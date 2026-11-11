@@ -8,6 +8,7 @@ import { FontGenerator } from "@/components/font-generator";
 import { JsonLd } from "@/components/json-ld";
 import { PageLinks } from "@/components/page-links";
 import { fontPages, getPage } from "@/data/pages";
+import { FONT_STYLES } from "@/lib/styles";
 import { pageMetadata, webApplicationJsonLd, webPageJsonLd } from "@/lib/seo";
 
 type Params = { slug: string };
@@ -36,7 +37,7 @@ export default async function FontStylePage({ params }: { params: Promise<Params
   return (
     <article className="mx-auto max-w-6xl px-4 pb-8 pt-5 sm:px-6">
       <JsonLd data={webPageJsonLd({ title: page.title, description: page.description, path })} />
-      <JsonLd data={webApplicationJsonLd({ name: `${page.navLabel} Generator`, path, description: page.description })} />
+      <JsonLd data={webApplicationJsonLd({ name: page.navLabel.endsWith("Generator") ? page.navLabel : `${page.navLabel} Generator`, path, description: page.description })} />
       <Breadcrumbs
         items={[
           { name: "Copy and Paste Fonts", path: "/" },
@@ -49,7 +50,7 @@ export default async function FontStylePage({ params }: { params: Promise<Params
         <p className="mt-2 max-w-3xl text-ink-soft sm:text-lg">{page.intro}</p>
       </header>
 
-      <section aria-label={`${page.navLabel} generator`} className="mt-5">
+      <section aria-label={page.navLabel.endsWith("Generator") ? page.navLabel : `${page.navLabel} generator`} className="mt-5">
         <FontGenerator styleIds={page.styleIds} placeholder={page.placeholder} />
       </section>
 
@@ -86,6 +87,7 @@ export default async function FontStylePage({ params }: { params: Promise<Params
           Related font styles
         </h2>
         <PageLinks slugs={page.related} />
+        {page.styleIds.length < FONT_STYLES.length && (
         <p className="mt-6 text-ink-soft">
           Want every style in one place? Go back to the{" "}
           <Link href="/" className="font-medium text-accent underline underline-offset-2">
@@ -93,6 +95,7 @@ export default async function FontStylePage({ params }: { params: Promise<Params
           </Link>{" "}
           with 80+ styles.
         </p>
+        )}
       </section>
       </div>
     </article>

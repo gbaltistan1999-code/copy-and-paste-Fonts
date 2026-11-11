@@ -1,4 +1,9 @@
 import type { FontPage } from "@/types";
+import { FONT_STYLES, convertWith } from "@/lib/styles";
+
+/** Inline examples are produced by the real converters, so they always match the generator output. */
+const c = convertWith;
+const SAMPLE = "Fancy Text";
 
 /**
  * Content for the individual font style pages.
@@ -6,6 +11,134 @@ import type { FontPage } from "@/types";
  * between pages and only changing the style name.
  */
 export const stylePages: FontPage[] = [
+  {
+    slug: "fancy-text-generator",
+    kind: "style",
+    navLabel: "Fancy Text Generator",
+    title: "Fancy Text Generator – Copy and Paste Cool Fonts (Free)",
+    description:
+      "Type once, get 80+ fancy text styles. Bold, cursive, bubble, gothic and more. Copy and paste them into Instagram, TikTok, Discord or anywhere. Free, no sign-up.",
+    h1: "Fancy Text Generator",
+    intro: "Type your text and copy any style you like. Works anywhere you can paste text.",
+    styleIds: FONT_STYLES.map((s) => s.id),
+    placeholder: "Type your text here",
+    sections: [
+      {
+        heading: "Turn plain words into text that gets noticed",
+        paragraphs: [
+          "Plain text blends in. Whether it's an Instagram bio, a TikTok caption or your gaming name, the same default font everyone uses is easy to scroll past.",
+          `Our fancy text generator fixes that in seconds. Type anything in the box above and you'll instantly see your words in dozens of styles: ${c("bold-serif", "bold")}, ${c("bold-script", "cursive")}, ${c("fraktur", "gothic")}, ${c("circled", "bubble")}, ${c("double-struck", "outline")}, ${c("tiny-caps", "small caps")} and plenty more. Find one you like, tap copy, and paste it wherever you want.`,
+          "No app to download, no account to make, and nothing to pay. It works on your phone, tablet or computer.",
+        ],
+      },
+      {
+        heading: "How to use the fancy text generator",
+        paragraphs: ["It takes about five seconds."],
+        list: [
+          "1. Type your text. Enter a name, a word or a whole sentence in the box at the top.",
+          "2. Scroll the styles. Every style updates as you type, so you can compare them side by side.",
+          "3. Copy and paste. Tap the copy button next to the style you like, then paste it into your bio, caption, message or username.",
+          "Tip: if you're making a username or a short bio line, try a few styles before you settle. Some look bolder on a dark background, others read better in light mode.",
+        ],
+      },
+      {
+        heading: "Popular fancy text styles",
+        paragraphs: ["There's a style for every mood. Here are some popular choices and where they work best."],
+        list: [
+          `Bold (${c("bold-serif", SAMPLE)}): headlines in bios, LinkedIn posts, making one word stand out.`,
+          `Cursive script (${c("bold-script", SAMPLE)}): aesthetic bios, quotes, wedding and love captions.`,
+          `Italic (${c("italic-sans", SAMPLE)}): soft emphasis, quotes, song titles.`,
+          `Gothic, or Old English (${c("fraktur", SAMPLE)}): dark, edgy or vintage vibes and gaming names.`,
+          `Double struck (${c("double-struck", SAMPLE)}): clean, modern usernames.`,
+          `Bubble (${c("circled", SAMPLE)}): cute, playful captions.`,
+          `Small caps (${c("tiny-caps", SAMPLE)}): minimal, aesthetic bios.`,
+          `Monospace (${c("monospace", SAMPLE)}): a tech or typewriter look.`,
+          `Wide, or vaporwave (${c("fullwidth", SAMPLE)}): retro and vaporwave posts.`,
+          `Strikethrough (${c("strikethrough", SAMPLE)}): jokes and "changed my mind" moments.`,
+          `Upside down (${c("upside-down", SAMPLE)}): pranks and attention-grabbing comments.`,
+          `Decorated frames (${c("stars", SAMPLE)} or ${c("royal", SAMPLE)}): gaming names and profile headers.`,
+        ],
+      },
+      {
+        heading: "Where can you use fancy text?",
+        paragraphs: [
+          "If a box accepts text, it almost always accepts fancy text. Some games and apps limit which characters you can use in a username, though. If a style doesn't save, try a simpler one like bold or small caps.",
+        ],
+        list: [
+          "Instagram: bios, display names, captions and comments. A bold or cursive name line makes a profile look finished.",
+          "TikTok: bios and captions. Small caps and bubble text are popular for an aesthetic look.",
+          "Discord: display names, server names, channel names and messages.",
+          "X (Twitter), Threads and Facebook: bold a key phrase in a post so it doesn't get lost in the feed.",
+          "Gaming: names and chat in games such as Free Fire, PUBG and Fortnite, and on Steam. Rules differ by game, and some (Roblox, for example) restrict usernames, so check that your name saves.",
+          "WhatsApp and texting: status updates, group names and messages to friends.",
+          "YouTube: comments and channel descriptions.",
+        ],
+      },
+      {
+        heading: "How does a fancy text generator work?",
+        paragraphs: [
+          "Here's the interesting part: these aren't really fonts.",
+          "A normal font changes how letters look on your own screen, which is why you can't paste one into Instagram and have it stick. Fancy text uses Unicode instead. Unicode is the global standard that gives every character, in every language, its own code. It includes thousands of extra symbols, such as mathematical letters (𝐀, 𝒜, 𝔄), circled letters (Ⓐ) and small capitals (ᴀ).",
+          "When you type into our generator, it swaps each normal letter for its matching Unicode lookalike. Because those characters are real text, not a font setting, they stay styled wherever you paste them. That's why the same fancy text works in your Instagram bio, a Discord chat and a text message.",
+        ],
+      },
+      {
+        heading: "A few honest tips before you paste",
+        list: [
+          "Use it for accents, not everything. One styled name or headline looks great. A whole paragraph of cursive is hard to read.",
+          "Think about screen readers. Tools that read text aloud for blind and low-vision users often skip or mispronounce fancy characters. Keep important information, like contact details, in plain text.",
+          "Searchability drops. People searching Instagram or TikTok for your name usually type normal letters. Keep your real name in plain text somewhere on your profile so you can still be found.",
+          "Seeing boxes (□) instead of letters? That device or app doesn't support those characters yet. Pick a more common style, such as bold or italic, which work almost everywhere.",
+          "Test before you commit. Paste into the app first and preview it, especially for usernames you can't change often.",
+        ],
+      },
+    ],
+    examples: [
+      { label: "Bio name", text: "Aesthetic Soul", styleId: "bold-script" },
+      { label: "Gaming name", text: "Shadow", styleId: "stars" },
+      { label: "Profile header", text: "Queen", styleId: "royal" },
+      { label: "Bold headline", text: "Big news", styleId: "bold-sans" },
+      { label: "Minimal bio", text: "dreamer · artist", styleId: "tiny-caps" },
+      { label: "Retro post", text: "Vaporwave", styleId: "fullwidth" },
+    ],
+    faqs: [
+      {
+        question: "What is a fancy text generator?",
+        answer:
+          "It's a free online tool that turns normal text into stylish versions, like bold, cursive or bubble letters, using Unicode characters. You copy the result and paste it anywhere.",
+      },
+      {
+        question: "Is this fancy text generator free?",
+        answer: "Yes. Every style is free to use, with no sign-up and no limit on how much you convert.",
+      },
+      {
+        question: "Does fancy text work on Instagram and TikTok?",
+        answer:
+          "Yes. You can paste it into your bio, name, captions and comments on both apps. Most styles display correctly on iPhone and Android. Usernames (handles) are more restricted and usually accept only plain letters, numbers and a few symbols.",
+      },
+      {
+        question: "Why do some letters show as boxes or question marks?",
+        answer:
+          "The app or device you're using doesn't have those characters yet. Switch to a widely supported style like bold, italic or small caps.",
+      },
+      {
+        question: "Can I use fancy text in my game username?",
+        answer:
+          "Sometimes. It depends on the game: some accept many symbols, while others, like Roblox, restrict them. Paste the name in and check whether it saves.",
+      },
+      {
+        question: "Is it safe to copy and paste fancy text?",
+        answer:
+          "Yes. It's just text made of standard Unicode characters. It contains no code or links and can't harm your device or account.",
+      },
+      {
+        question: "Do you store what I type?",
+        answer: "No. The conversion happens right in your browser, so your text never leaves your device.",
+      },
+    ],
+    related: ["cursive-fonts", "bold-font", "bubble-letters", "instagram-fonts"],
+  },
+
   {
     slug: "cursive-fonts",
     kind: "style",

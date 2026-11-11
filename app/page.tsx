@@ -40,7 +40,7 @@ export default function HomePage() {
               </span>
             </h1>
             <p className="mt-2 text-balance font-display text-lg text-ink-soft sm:mt-4 sm:text-2xl">
-              Fancy Text Generator for Bios, Captions &amp; Chats
+              Free Font Styles for Bios, Captions &amp; Chats
             </p>
             <p className="mx-auto mt-3 hidden max-w-2xl leading-relaxed text-ink-soft sm:block sm:text-lg">
               Type once and get {FONT_STYLES.length} font styles you can copy and paste anywhere: Instagram, TikTok,

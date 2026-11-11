@@ -16,7 +16,8 @@ Both are served above the fold on the homepage: input first, results below, read
 
 | Page | Primary keyword | Secondary / variations |
 |---|---|---|
-| `/` | Copy and Paste Fonts | copy and paste font, font generator copy and paste, fancy fonts copy and paste, cool fonts copy and paste, fancy text generator, stylish fonts, font changer, fancy letters |
+| `/` | Copy and Paste Fonts | copy and paste font, font generator copy and paste, fancy fonts copy and paste, cool fonts copy and paste, stylish fonts, font changer, fancy letters |
+| `/fancy-text-generator` | fancy text generator | fancy text, fancy font generator, fancy text copy and paste, cool text generator, stylish text generator |
 | `/cursive-fonts` | cursive fonts copy and paste | script font, handwriting text, cursive text generator |
 | `/bold-font` | bold font copy and paste | bold text generator, bold text for Instagram / LinkedIn |
 | `/italic-font` | italic font copy and paste | italic text generator, slanted text |
@@ -35,8 +36,11 @@ Both are served above the fold on the homepage: input first, results below, read
 
 ## Cannibalization rules
 
-- All generic "font generator / fancy text / cool fonts" phrasings belong to `/`. Do **not** create
-  `/fancy-text-generator`, `/cool-fonts` or similar pages; they would compete with the homepage.
+- "Fancy text generator" and its close variants (fancy text, cool/stylish text generator) belong to
+  `/fancy-text-generator`. Other generic "font generator / cool fonts" phrasings belong to `/`.
+  The homepage must not use "fancy text generator" in its title, H1 or subheading. Do **not** create
+  `/cool-fonts` or similar pages; they would compete with the homepage. Watch Search Console: if `/` and
+  `/fancy-text-generator` swap rankings for the same queries, merge the page into the homepage.
 - Style pages target a **style** (visual result); platform pages target a **destination** (where it's pasted).
   Platform pages focus on platform rules, limits and tips, not on re-explaining each style.
 - Homepage FAQs and `/faq` questions are deliberately different. Style-page FAQs are specific to that style.
@@ -51,7 +55,7 @@ UTF-16 surrogate pairs and character counting, screen readers and accessibility.
 
 ```
 /                         (homepage + full generator)
-├── style pages           (/cursive-fonts, /bold-font, ... 11 pages)
+├── style pages           (/fancy-text-generator, /cursive-fonts, /bold-font, ... 12 pages)
 ├── platform pages        (/instagram-fonts, /discord-fonts, /tiktok-fonts)
 ├── /faq
 ├── /about, /contact
