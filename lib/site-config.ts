@@ -46,6 +46,7 @@ export const platformNav: NavLink[] = [
 ];
 
 export const trustNav: NavLink[] = [
+  { href: "/blog", label: "Blog" },
   { href: "/about", label: "About" },
   { href: "/contact", label: "Contact" },
   { href: "/faq", label: "FAQ" },

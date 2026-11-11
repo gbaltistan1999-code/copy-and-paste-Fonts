@@ -67,11 +67,12 @@ export function SiteNav() {
           onToggle={() => setOpen(open === "platforms" ? null : "platforms")}
           pathname={pathname}
         />
-        <Link href="/about" className={linkClass("/about")} aria-current={pathname === "/about" ? "page" : undefined}>
-          About
-        </Link>
-        <Link href="/faq" className={linkClass("/faq")} aria-current={pathname === "/faq" ? "page" : undefined}>
-          FAQ
+        <Link
+          href="/blog"
+          className={linkClass(pathname.startsWith("/blog") ? pathname : "/blog")}
+          aria-current={pathname === "/blog" ? "page" : undefined}
+        >
+          Blog
         </Link>
       </nav>
 
@@ -99,8 +100,7 @@ export function SiteNav() {
           <MobileGroup title="Font styles" links={fontNav} pathname={pathname} />
           <MobileGroup title="Platforms" links={platformNav} pathname={pathname} />
           <ul className="mt-4 space-y-1 border-t border-line pt-4">
-            <MobileLink href="/about" label="About" pathname={pathname} />
-            <MobileLink href="/faq" label="FAQ" pathname={pathname} />
+            <MobileLink href="/blog" label="Blog" pathname={pathname} />
             <MobileLink href="/contact" label="Contact" pathname={pathname} />
           </ul>
         </nav>

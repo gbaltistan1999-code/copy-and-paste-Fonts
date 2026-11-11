@@ -1,11 +1,13 @@
 import type { MetadataRoute } from "next";
 import { fontPages } from "@/data/pages";
+import { blogPosts } from "@/data/blog";
 import { absoluteUrl } from "@/lib/site-config";
 
 /** Only canonical, indexable pages. Uses the configured domain, never env vars. */
 export default function sitemap(): MetadataRoute.Sitemap {
   const core: { path: string; priority: number; changeFrequency: "weekly" | "monthly" | "yearly" }[] = [
     { path: "/", priority: 1, changeFrequency: "weekly" },
+    { path: "/blog", priority: 0.6, changeFrequency: "weekly" },
     { path: "/faq", priority: 0.6, changeFrequency: "monthly" },
     { path: "/about", priority: 0.4, changeFrequency: "yearly" },
     { path: "/contact", priority: 0.3, changeFrequency: "yearly" },
@@ -20,6 +22,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...fontPages.map((p) => ({
       url: absoluteUrl(`/${p.slug}`),
       priority: p.kind === "style" ? 0.8 : 0.7,
+      changeFrequency: "monthly" as const,
+    })),
+    ...blogPosts.map((p) => ({
+      url: absoluteUrl(`/blog/${p.slug}`),
+      lastModified: p.dateModified,
+      priority: 0.7,
       changeFrequency: "monthly" as const,
     })),
   ];

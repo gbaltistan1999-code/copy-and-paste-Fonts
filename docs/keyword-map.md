@@ -32,6 +32,7 @@ Both are served above the fold on the homepage: input first, results below, read
 | `/instagram-fonts` | instagram fonts | fonts for instagram bio, instagram font generator |
 | `/discord-fonts` | discord fonts | discord font generator, discord name fonts |
 | `/tiktok-fonts` | tiktok fonts | tiktok bio fonts, tiktok font generator |
+| `/blog/instagram-captions` | instagram captions | short / aesthetic / cute / funny instagram captions, instagram captions for selfies, captions for instagram |
 | `/faq` | copy and paste fonts FAQ | why fonts show boxes, are fancy fonts real fonts |
 
 ## Cannibalization rules
@@ -57,6 +58,7 @@ UTF-16 surrogate pairs and character counting, screen readers and accessibility.
 /                         (homepage + full generator)
 ├── style pages           (/fancy-text-generator, /cursive-fonts, /bold-font, ... 12 pages)
 ├── platform pages        (/instagram-fonts, /discord-fonts, /tiktok-fonts)
+├── /blog                 (index + posts, e.g. /blog/instagram-captions)
 ├── /faq
 ├── /about, /contact
 └── /privacy-policy, /terms-and-conditions, /cookie-policy, /disclaimer
