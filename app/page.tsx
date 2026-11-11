@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { BadgeCheck, Type, Zap } from "lucide-react";
 import { ExamplesGrid } from "@/components/examples-grid";
@@ -83,8 +84,24 @@ export default function HomePage() {
             , the system every modern device uses to represent text. That&apos;s why they survive copying and pasting:
             you&apos;re pasting different characters, not formatting.
           </p>
+          <Image
+            src="/home/copy-and-paste-font-styles.png"
+            width={1672}
+            height={941}
+            alt="The word Style shown in five copy and paste font styles: bold, cursive script, gothic, bubble and spaced capitals."
+            sizes="(min-width: 896px) 832px, 100vw"
+            className="mt-6 h-auto w-full rounded-2xl border border-line"
+          />
 
           <h2>How do you use this font generator?</h2>
+          <Image
+            src="/home/how-to-copy-and-paste-fonts.png"
+            width={1733}
+            height={907}
+            alt="How to use the font generator in three steps: 1, type your text; 2, get styles to choose from; 3, paste the styled text into a message."
+            sizes="(min-width: 896px) 832px, 100vw"
+            className="mt-4 h-auto w-full rounded-2xl border border-line"
+          />
           <ol>
             <li>
               <strong>Type or paste</strong> your text into the box at the top of the page.
