@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Breadcrumbs } from "@/components/breadcrumbs";
 import { JsonLd } from "@/components/json-ld";
 import { blogPosts, formatPostDate } from "@/data/blog";
+import { getAuthor } from "@/data/authors";
 import { pageMetadata, webPageJsonLd } from "@/lib/seo";
 
 const description =
@@ -44,6 +45,7 @@ export default function BlogIndexPage() {
               <div className="p-5">
                 <p className="text-xs text-ink-soft">
                   <time dateTime={post.datePublished}>{formatPostDate(post.datePublished)}</time>
+                  {getAuthor(post.author) && ` · By ${getAuthor(post.author)!.name}`}
                 </p>
                 <h2 className="mt-1 text-lg font-bold leading-snug text-ink group-hover:text-accent">{post.h1}</h2>
                 <p className="mt-2 text-sm text-ink-soft">{post.excerpt}</p>

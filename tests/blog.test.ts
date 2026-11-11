@@ -1,5 +1,6 @@
 import { describe, expect, it } from "vitest";
 import { blogPosts, formatPostDate, instagramCaptionCount, instagramCaptionGroups } from "@/data/blog";
+import { authors, getAuthor } from "@/data/authors";
 
 describe("blog posts", () => {
   it("has unique, valid slugs, titles and descriptions", () => {
@@ -15,6 +16,14 @@ describe("blog posts", () => {
       expect(p.image.alt.length).toBeGreaterThan(10);
       expect(p.dateModified >= p.datePublished).toBe(true);
       expect(p.faqs.length).toBeGreaterThanOrEqual(4);
+    }
+  });
+
+  it("credits every post to an existing author", () => {
+    for (const p of blogPosts) expect(getAuthor(p.author), p.slug).toBeDefined();
+    for (const a of authors) {
+      expect(a.slug).toMatch(/^[a-z0-9]+(-[a-z0-9]+)*$/);
+      expect(a.bio.length).toBeGreaterThan(20);
     }
   });
 

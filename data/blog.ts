@@ -17,6 +17,8 @@ export interface BlogPost {
   /** ISO dates (YYYY-MM-DD). */
   datePublished: string;
   dateModified: string;
+  /** Author slug from data/authors.ts. */
+  author: string;
   image: BlogImage;
   /** Short summary shown on the blog index. */
   excerpt: string;
@@ -260,6 +262,7 @@ export const blogPosts: BlogPost[] = [
     h1: "150 Instagram Captions to Copy and Paste",
     datePublished: "2026-11-12",
     dateModified: "2026-11-12",
+    author: "david",
     image: {
       src: "/blog/instagram-captions.png",
       width: 1734,

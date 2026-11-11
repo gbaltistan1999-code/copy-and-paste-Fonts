@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
 import { fontPages } from "@/data/pages";
 import { blogPosts } from "@/data/blog";
+import { authorPath, authors } from "@/data/authors";
 import { absoluteUrl } from "@/lib/site-config";
 
 /** Only canonical, indexable pages. Uses the configured domain, never env vars. */
@@ -28,6 +29,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: absoluteUrl(`/blog/${p.slug}`),
       lastModified: p.dateModified,
       priority: 0.7,
+      changeFrequency: "monthly" as const,
+    })),
+    ...authors.map((a) => ({
+      url: absoluteUrl(authorPath(a)),
+      priority: 0.4,
       changeFrequency: "monthly" as const,
     })),
   ];

@@ -6,6 +6,8 @@ import { Breadcrumbs } from "@/components/breadcrumbs";
 import { Faq } from "@/components/faq";
 import { JsonLd } from "@/components/json-ld";
 import { postContent } from "@/components/blog/post-content";
+import { AuthorBox, AuthorByline } from "@/components/blog/author-card";
+import { getAuthor } from "@/data/authors";
 import { blogPosts, formatPostDate, getPost } from "@/data/blog";
 import { blogPostingJsonLd, pageMetadata } from "@/lib/seo";
 
@@ -34,13 +36,14 @@ export default async function BlogPostPage({ params }: { params: Promise<Params>
   const { slug } = await params;
   const post = getPost(slug);
   const content = postContent[slug];
-  if (!post || !content) notFound();
+  const author = post && getAuthor(post.author);
+  if (!post || !content || !author) notFound();
   const { Body, Closing } = content;
   const path = `/blog/${post.slug}`;
 
   return (
     <article className="mx-auto max-w-3xl px-4 pb-8 pt-5 sm:px-6">
-      <JsonLd data={blogPostingJsonLd(post)} />
+      <JsonLd data={blogPostingJsonLd(post, author)} />
       <Breadcrumbs
         items={[
           { name: "Home", path: "/" },
@@ -51,7 +54,8 @@ export default async function BlogPostPage({ params }: { params: Promise<Params>
 
       <header className="mt-4">
         <h1 className="text-3xl font-bold tracking-tight sm:text-4xl">{post.h1}</h1>
-        <p className="mt-2 text-sm text-ink-soft">
+        <AuthorByline author={author}>
+          {" · "}
           <time dateTime={post.datePublished}>{formatPostDate(post.datePublished)}</time>
           {post.dateModified !== post.datePublished && (
             <>
@@ -59,7 +63,7 @@ export default async function BlogPostPage({ params }: { params: Promise<Params>
               <time dateTime={post.dateModified}>{formatPostDate(post.dateModified)}</time>
             </>
           )}
-        </p>
+        </AuthorByline>
       </header>
 
       <Image
@@ -86,6 +90,8 @@ export default async function BlogPostPage({ params }: { params: Promise<Params>
           <Closing />
         </section>
       )}
+
+      <AuthorBox author={author} />
 
       <p className="mt-10 border-t border-line pt-6 text-sm text-ink-soft">
         <Link href="/blog" className="font-medium text-accent underline underline-offset-2">
