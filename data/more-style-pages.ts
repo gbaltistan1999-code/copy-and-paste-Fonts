@@ -874,7 +874,7 @@ export const moreStylePages: FontPage[] = [
     slug: "vaporwave-text",
     kind: "style",
     navLabel: "Vaporwave Text",
-    title: "Vaporwave Text Generator – Wide Text Copy and Paste (ａｅｓｔｈｅｔｉｃ)",
+    title: "Vaporwave Text Generator – Wide Text Copy and Paste",
     description:
       "Make wide vaporwave text like ａｅｓｔｈｅｔｉｃ and copy and paste it. Fullwidth letters, retro brackets and spaced-out styles for posts, bios and art.",
     h1: "Vaporwave Text Generator",
