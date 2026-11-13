@@ -37,6 +37,20 @@ export const fontNav: NavLink[] = [
   { href: "/upside-down-text", label: "Upside Down Text" },
   { href: "/strikethrough-text", label: "Strikethrough Text" },
   { href: "/underline-text", label: "Underline Text" },
+  { href: "/cute-fonts", label: "Cute Fonts" },
+  { href: "/tiny-text", label: "Tiny Text" },
+  { href: "/old-english-font", label: "Old English Font" },
+  { href: "/calligraphy-font", label: "Calligraphy Font" },
+  { href: "/tattoo-fonts", label: "Tattoo Fonts" },
+  { href: "/graffiti-font", label: "Graffiti Font" },
+  { href: "/double-struck-font", label: "Double-Struck Font" },
+  { href: "/monospace-font", label: "Monospace Font" },
+  { href: "/square-text", label: "Square Text" },
+  { href: "/mirror-text", label: "Mirror Text" },
+  { href: "/zalgo-text", label: "Zalgo Text" },
+  { href: "/vaporwave-text", label: "Vaporwave Text" },
+  { href: "/russian-font", label: "Russian Font" },
+  { href: "/bold-italic-font", label: "Bold Italic Font" },
 ];
 
 export const platformNav: NavLink[] = [

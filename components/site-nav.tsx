@@ -141,7 +141,9 @@ function Dropdown({
       {isOpen && (
         <ul
           id={id}
-          className="absolute right-0 top-full mt-1 w-56 rounded-lg border border-line bg-white p-1.5 shadow-lg"
+          className={`absolute right-0 top-full mt-1 rounded-lg border border-line bg-white p-1.5 shadow-lg ${
+            links.length > 12 ? "grid w-[28rem] grid-cols-2 gap-x-1" : "w-56"
+          }`}
         >
           {links.map((link) => (
             <li key={link.href}>

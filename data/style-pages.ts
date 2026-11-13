@@ -372,7 +372,7 @@ export const stylePages: FontPage[] = [
     slug: "bubble-letters",
     kind: "style",
     navLabel: "Bubble Letters",
-    title: "Bubble Letters Copy and Paste – Circled & Squared Text",
+    title: "Bubble Letters Copy and Paste – Circled Bubble Text Generator",
     description:
       "Copy and paste bubble letters: circled Ⓐ, black bubble 🅐 and squared 🄰 text for bios, nicknames and posts. Converted instantly in your browser.",
     h1: "Bubble Letters Copy and Paste",
@@ -440,17 +440,17 @@ export const stylePages: FontPage[] = [
           "Yes. White circled numbers ⓪ to ⑨ and black circled numbers ⓿ to ❾ are included. Squared styles do not have numbers, so digits stay normal there.",
       },
     ],
-    related: ["aesthetic-fonts", "small-caps-font", "tiktok-fonts", "gothic-font"],
+    related: ["square-text", "aesthetic-fonts", "cute-fonts", "tiktok-fonts"],
   },
 
   {
     slug: "small-caps-font",
     kind: "style",
     navLabel: "Small Caps",
-    title: "Small Caps Font Copy and Paste – Tiny Text Generator",
+    title: "Small Caps Font Copy and Paste – Small Capital Letters",
     description:
-      "Generate small caps, superscript tiny text and subscript you can copy and paste. Learn which letters exist in Unicode and where small text displays well.",
-    h1: "Small Caps Font and Tiny Text",
+      "Generate small caps font text (ꜱᴍᴀʟʟ ᴄᴀᴘꜱ) you can copy and paste. Learn which small capital letters exist in Unicode and where they display well.",
+    h1: "Small Caps Font Copy and Paste",
     intro:
       "Small capital letters look neat and understated. Type below for small caps, all small caps, superscript and subscript text.",
     styleIds: ["small-caps", "tiny-caps", "superscript", "subscript", "flowers"],
@@ -468,7 +468,7 @@ export const stylePages: FontPage[] = [
         ],
       },
       {
-        heading: "Superscript and subscript tiny text",
+        heading: "Superscript and subscript",
         paragraphs: [
           "Superscript letters (ᵗⁱⁿʸ) are modifier letters used in phonetics. Nearly the whole alphabet exists, except a widely supported superscript q. Subscript is much more limited: Unicode only provides subscript forms for a, e, h, i, j, k, l, m, n, o, p, r, s, t, u, v and x, plus digits and a few math signs. Letters without a subscript form are left unchanged.",
           "Superscript and subscript numbers (x², H₂O) are well supported almost everywhere and are useful beyond decoration, for units, footnotes and simple formulas.",
@@ -513,17 +513,17 @@ export const stylePages: FontPage[] = [
           "It is generally more legible than script or gothic styles because the letter shapes are simple. It still may not be read correctly by screen readers, so avoid it for essential information.",
       },
     ],
-    related: ["aesthetic-fonts", "italic-font", "bubble-letters", "instagram-fonts"],
+    related: ["tiny-text", "aesthetic-fonts", "italic-font", "instagram-fonts"],
   },
 
   {
     slug: "glitch-text",
     kind: "style",
     navLabel: "Glitch Text",
-    title: "Glitch Text Copy and Paste – Zalgo Text Generator",
+    title: "Glitch Text Copy and Paste – Corrupted Text Generator",
     description:
-      "Create creepy glitch (Zalgo) text with adjustable intensity and copy and paste it anywhere. Learn how combining marks work and where glitch text gets cut off.",
-    h1: "Glitch Text (Zalgo) Copy and Paste",
+      "Create creepy glitch text with adjustable intensity and copy and paste it anywhere. Learn how combining marks work and where glitch text gets cut off.",
+    h1: "Glitch Text Copy and Paste",
     intro:
       "Make your text look corrupted and creepy. Pick an intensity, type below and copy the glitched result.",
     styleIds: ["zalgo", "cross-above", "wavy-strike", "slash-through", "dots-below"],
@@ -588,7 +588,7 @@ export const stylePages: FontPage[] = [
           "Each mark is a separate character. A five-letter word at high intensity can contain over a hundred code points, so platforms with character limits fill up fast.",
       },
     ],
-    related: ["upside-down-text", "strikethrough-text", "gothic-font", "discord-fonts"],
+    related: ["zalgo-text", "upside-down-text", "strikethrough-text", "discord-fonts"],
   },
 
   {
@@ -597,7 +597,7 @@ export const stylePages: FontPage[] = [
     navLabel: "Upside Down Text",
     title: "Upside Down Text Copy and Paste – Flip Text Generator",
     description:
-      "Flip text upside down, mirror it or write it backwards, then copy and paste. See which characters can be flipped and why some capitals look imperfect.",
+      "Flip text upside down and copy and paste it anywhere. See which characters can be turned over and why some capitals and digits look imperfect.",
     h1: "Upside Down Text Copy and Paste",
     intro: "Type below to flip your text upside down, mirror it, or simply reverse it.",
     styleIds: ["upside-down", "mirrored", "reversed"],
@@ -662,7 +662,7 @@ export const stylePages: FontPage[] = [
           "Mirrored text is flipped horizontally, as it would appear in a mirror. It reads right to left and swaps letters like b and d.",
       },
     ],
-    related: ["glitch-text", "strikethrough-text", "tiktok-fonts", "bubble-letters"],
+    related: ["mirror-text", "glitch-text", "strikethrough-text", "tiktok-fonts"],
   },
 
   {
@@ -814,9 +814,9 @@ export const stylePages: FontPage[] = [
     slug: "gothic-font",
     kind: "style",
     navLabel: "Gothic Font",
-    title: "Gothic Font Copy and Paste – Old English & Fraktur Text",
+    title: "Gothic Font Copy and Paste – Fraktur & Blackletter Text",
     description:
-      "Copy and paste gothic Old English text in Fraktur and bold blackletter styles. Learn which letters come from Letterlike Symbols and how to keep it readable.",
+      "Copy and paste gothic text in Fraktur and bold blackletter styles. Learn which letters come from Letterlike Symbols and how to keep it readable.",
     h1: "Gothic Font Copy and Paste",
     intro:
       "Give your text a dramatic blackletter look. Type below for Fraktur, bold gothic and related styles.",
@@ -862,9 +862,9 @@ export const stylePages: FontPage[] = [
     ],
     faqs: [
       {
-        question: "Is this the Old English font?",
+        question: "Is gothic text the same as the Old English font?",
         answer:
-          "It is a similar blackletter look made from Unicode Fraktur characters, not the Old English typeface itself. That is what allows it to be copied and pasted as text.",
+          "They share the same blackletter look. “Old English” is the popular name taken from typefaces; the characters here are Unicode Fraktur letters, which is what lets them be copied and pasted. See our Old English font page for that style.",
       },
       {
         question: "Why do C, H, I, R and Z look different?",
@@ -882,16 +882,16 @@ export const stylePages: FontPage[] = [
           "It depends on the game. Many limit names to basic characters. Chat, clan descriptions and social profiles are more likely to accept Fraktur letters.",
       },
     ],
-    related: ["bold-font", "cursive-fonts", "glitch-text", "bubble-letters"],
+    related: ["old-english-font", "bold-font", "tattoo-fonts", "glitch-text"],
   },
 
   {
     slug: "aesthetic-fonts",
     kind: "style",
     navLabel: "Aesthetic Fonts",
-    title: "Aesthetic Fonts Copy and Paste – Cute & Vaporwave Text",
+    title: "Aesthetic Fonts Copy and Paste – Soft & Decorated Text",
     description:
-      "Aesthetic fonts to copy and paste: vaporwave fullwidth text, cute decorated styles, soft separators and lookalike letters for bios, captions and usernames.",
+      "Aesthetic fonts to copy and paste: decorated frames, soft separators, wide letters and lookalike alphabets for bios, captions and usernames.",
     h1: "Aesthetic Fonts Copy and Paste",
     intro:
       "Soft, cute and vaporwave styles for bios and captions. Type below and pick the mood that fits.",
@@ -942,9 +942,9 @@ export const stylePages: FontPage[] = [
     ],
     faqs: [
       {
-        question: "What is vaporwave text called?",
+        question: "Which aesthetic font is the most readable?",
         answer:
-          "It is fullwidth text, made from the Halfwidth and Fullwidth Forms Unicode block. The characters are wider than normal letters, which creates the spaced-out vaporwave look.",
+          "Styles that keep normal letters and only add a frame or separators, such as Corner Brackets, Hearts Between or Dotted, are the easiest to read. Lookalike alphabets are the hardest. For wide vaporwave text, see our vaporwave text page.",
       },
       {
         question: "Are the decorations emoji?",
@@ -962,6 +962,6 @@ export const stylePages: FontPage[] = [
           "Some fonts draw fullwidth Latin letters only slightly wider than normal. The effect is usually more obvious on phones.",
       },
     ],
-    related: ["cursive-fonts", "bubble-letters", "small-caps-font", "instagram-fonts"],
+    related: ["vaporwave-text", "cute-fonts", "cursive-fonts", "instagram-fonts"],
   },
 ];
