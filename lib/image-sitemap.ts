@@ -1,6 +1,7 @@
 import { authorPath, authors } from "@/data/authors";
 import { blogPosts } from "@/data/blog";
 import { homeImages } from "@/data/home";
+import { fontPages } from "@/data/pages";
 import { absoluteUrl } from "@/lib/site-config";
 
 export interface ImageSitemapEntry {
@@ -17,6 +18,7 @@ export function imageSitemapEntries(): ImageSitemapEntry[] {
     { page: absoluteUrl("/blog"), images: blogPosts.map((p) => absoluteUrl(p.image.src)) },
     ...blogPosts.map((p) => ({ page: absoluteUrl(`/blog/${p.slug}`), images: [absoluteUrl(p.image.src)] })),
     ...authors.map((a) => ({ page: absoluteUrl(authorPath(a)), images: [absoluteUrl(a.image.src)] })),
+    ...fontPages.map((p) => ({ page: absoluteUrl(`/${p.slug}`), images: p.image ? [absoluteUrl(p.image.src)] : [] })),
   ].filter((e) => e.images.length > 0);
 }
 

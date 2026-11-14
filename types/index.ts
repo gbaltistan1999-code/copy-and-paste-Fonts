@@ -44,10 +44,25 @@ export interface FaqItem {
   answer: string;
 }
 
+/**
+ * Section text may contain inline links written as [anchor text](/path).
+ * Render order: paragraphs, steps (numbered), list (bullets), note.
+ */
 export interface ContentSection {
   heading: string;
   paragraphs?: string[];
+  steps?: string[];
   list?: string[];
+  /** Short paragraph shown after the list or steps. */
+  note?: string;
+}
+
+export interface ContentImage {
+  /** Path under /public. */
+  src: string;
+  width: number;
+  height: number;
+  alt: string;
 }
 
 export interface ExampleItem {
@@ -70,6 +85,8 @@ export interface FontPage {
   /** Styles shown in this page's generator, in display order. */
   styleIds: string[];
   placeholder: string;
+  /** Optional illustration, shown after the first section heading and used as the social image. */
+  image?: ContentImage;
   sections: ContentSection[];
   examples: ExampleItem[];
   faqs: FaqItem[];

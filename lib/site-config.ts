@@ -57,6 +57,7 @@ export const platformNav: NavLink[] = [
   { href: "/instagram-fonts", label: "Instagram Fonts" },
   { href: "/discord-fonts", label: "Discord Fonts" },
   { href: "/tiktok-fonts", label: "TikTok Fonts" },
+  { href: "/iphone-fonts", label: "iPhone Fonts" },
 ];
 
 export const trustNav: NavLink[] = [

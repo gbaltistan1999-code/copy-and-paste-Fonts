@@ -110,6 +110,10 @@ export function CopyAndPasteFontsGuidePost() {
       <Tip>
         Save the styles you use most in a note. Then you can copy them again later without opening the generator.
       </Tip>
+      <p>
+        Want styles that look best on iOS? Try our <Link href="/iphone-fonts">iPhone fonts</Link> generator, with
+        cursive, bold and bubble text picked for iPhone.
+      </p>
 
       <h2 id="android" className="scroll-mt-20">
         How to copy and paste fonts on Android

@@ -269,4 +269,112 @@ export const platformPages: FontPage[] = [
     ],
     related: ["instagram-fonts", "bubble-letters", "aesthetic-fonts", "upside-down-text"],
   },
+
+  {
+    slug: "iphone-fonts",
+    kind: "platform",
+    navLabel: "iPhone Fonts",
+    title: "iPhone Fonts Copy and Paste – Fancy Text for iOS",
+    description:
+      "Copy and paste cool iPhone fonts in one tap. Cursive, bold, bubble and aesthetic text for Instagram, WhatsApp, TikTok and Notes. Free, no app needed.",
+    h1: "iPhone Fonts Copy and Paste",
+    intro:
+      "Type your text and get dozens of cool iPhone fonts instantly. Tap any style to copy it, then paste it into Instagram, WhatsApp, TikTok, Messages or Notes. No app or keyboard needed.",
+    styleIds: [
+      // Most popular on iPhone first.
+      "bold-script", "bold-sans", "italic-sans", "circled", "small-caps", "bold-fraktur", "double-struck", "fullwidth",
+      "monospace", "negative-circled",
+      "script", "tiny-caps", "bold-serif", "sparkles", "hearts", "flowers", "royal", "cute-bow",
+    ],
+    placeholder: "iPhone Fonts",
+    image: {
+      src: "/pages/iphone-fonts-copy-and-paste.png",
+      width: 1672,
+      height: 941,
+      alt: "iPhone fonts copy and paste: an iPhone font generator showing the word Fonts in cursive, bold, bubble, gothic and outline styles, each with a Copy button.",
+    },
+    sections: [
+      {
+        heading: "What are iPhone fonts?",
+        paragraphs: [
+          "iPhone fonts are fancy text styles you can copy and paste into any app on iOS. iPhone doesn't let you change the font in Instagram, WhatsApp or TikTok. So this tool turns your text into special Unicode letters that look like [cursive](/cursive-fonts), [bold](/bold-font), [bubble](/bubble-letters) or [gothic](/gothic-font) writing. Because they're text characters, not font files, they show up on almost every modern phone.",
+        ],
+      },
+      {
+        heading: "How to use these fonts on your iPhone",
+        steps: [
+          "Type your text in the box above.",
+          "Tap Copy next to the style you like.",
+          "Open Instagram, WhatsApp, Messages or any app.",
+          "Tap the text field, then tap Paste. If iOS asks, tap Allow Paste.",
+        ],
+        note: "Want more detail, including Android and PC? Read our [full step-by-step guide](/blog/copy-and-paste-fonts-iphone-android-pc).",
+      },
+      {
+        heading: "Where you can use iPhone fonts",
+        list: [
+          "Instagram: bio, name, captions, comments and Story text",
+          "WhatsApp: chats, About and Status",
+          "TikTok: bio, captions and comments",
+          "Messages and Notes: texts to friends and saved notes",
+          "Discord, X and Facebook posts: messages and comments",
+        ],
+        note: "Usernames on Instagram and TikTok only accept plain letters, numbers, periods and underscores. Put fancy text in your display name and bio instead.",
+      },
+      {
+        heading: "Tips for the best look",
+        list: [
+          "Pick a simple style for long text. Bold and italic are easy to read. Save gothic and bubble letters for names and short lines.",
+          "Mix styles. Use cursive for your name and normal text for the rest of your bio.",
+          "Add symbols. Pair fonts with hearts ♡, stars ✧ or sparkles ✨ for an aesthetic look.",
+          "Save favorites. Paste your best styles in Notes so you can copy them again later.",
+          "Update iOS. If some styles show as boxes, an iOS update usually fixes it.",
+        ],
+      },
+    ],
+    examples: [
+      { label: "Instagram name", text: "Emma Rose", styleId: "bold-script" },
+      { label: "WhatsApp About", text: "busy, text me", styleId: "small-caps" },
+      { label: "Notes heading", text: "To Do List", styleId: "bold-sans" },
+      { label: "TikTok bio", text: "daily vlogs", styleId: "fullwidth" },
+      { label: "Message to a friend", text: "miss you", styleId: "hearts" },
+      { label: "Bubble name", text: "Lily", styleId: "circled" },
+    ],
+    faqs: [
+      {
+        question: "How do I get different fonts on my iPhone?",
+        answer:
+          "Type your text in the generator above, copy a style and paste it into any app. You don't need to install a keyboard or change your iPhone's settings.",
+      },
+      {
+        question: "Can I change the system font on my iPhone?",
+        answer:
+          "No. iOS doesn't let you change the font of the whole phone. You can only change the text size and make it bold in Settings > Display & Brightness. Copy and paste fonts are the easiest way to get a different look in apps.",
+      },
+      {
+        question: "Do I need a font app or keyboard?",
+        answer:
+          "No. Font keyboard apps often ask for \"Full Access\" to what you type. This web tool works in Safari with nothing to install.",
+      },
+      {
+        question: "Will my friends see the fancy fonts?",
+        answer:
+          "Yes. They show correctly on almost all iPhones and Android phones. Very old devices may show empty boxes.",
+      },
+      {
+        question: "Why do some fonts show as boxes on my iPhone?",
+        answer:
+          "Your iOS version may not support those symbols. Update your iPhone or choose a simpler style like bold or cursive.",
+      },
+      {
+        question: "Are these iPhone fonts free?",
+        answer: "Yes. Every style is free to copy and use as often as you want.",
+      },
+      {
+        question: "Do these fonts work on iPad too?",
+        answer: "Yes. The steps are the same on iPad, and on Android and PC as well.",
+      },
+    ],
+    related: ["cursive-fonts", "bold-font", "bubble-letters", "instagram-fonts"],
+  },
 ];

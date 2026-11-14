@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Breadcrumbs } from "@/components/breadcrumbs";
@@ -7,6 +8,7 @@ import { Faq } from "@/components/faq";
 import { FontGenerator } from "@/components/font-generator";
 import { JsonLd } from "@/components/json-ld";
 import { PageLinks } from "@/components/page-links";
+import { RichText } from "@/components/rich-text";
 import { fontPages, getPage } from "@/data/pages";
 import { FONT_STYLES } from "@/lib/styles";
 import { pageMetadata, webApplicationJsonLd, webPageJsonLd } from "@/lib/seo";
@@ -24,7 +26,12 @@ export async function generateMetadata({ params }: { params: Promise<Params> }):
   const { slug } = await params;
   const page = getPage(slug);
   if (!page) return {};
-  return pageMetadata({ title: page.title, description: page.description, path: `/${page.slug}` });
+  return pageMetadata({
+    title: page.title,
+    description: page.description,
+    path: `/${page.slug}`,
+    image: page.image && { url: page.image.src, width: page.image.width, height: page.image.height, alt: page.image.alt },
+  });
 }
 
 export default async function FontStylePage({ params }: { params: Promise<Params> }) {
@@ -57,16 +64,46 @@ export default async function FontStylePage({ params }: { params: Promise<Params
       {/* Text content stays at a comfortable reading width; only the generator uses the full width. */}
       <div className="mx-auto max-w-4xl">
       <div className="cv-auto prose-content mt-12">
-        {page.sections.map((section) => (
+        {page.sections.map((section, i) => (
           <section key={section.heading}>
             <h2>{section.heading}</h2>
-            {section.paragraphs?.map((p) => <p key={p.slice(0, 40)}>{p}</p>)}
+            {i === 0 && page.image && (
+              <Image
+                src={page.image.src}
+                width={page.image.width}
+                height={page.image.height}
+                alt={page.image.alt}
+                sizes="(min-width: 896px) 832px, 100vw"
+                className="mt-4 h-auto w-full rounded-2xl border border-line"
+              />
+            )}
+            {section.paragraphs?.map((p) => (
+              <p key={p.slice(0, 40)}>
+                <RichText text={p} />
+              </p>
+            ))}
+            {section.steps && (
+              <ol>
+                {section.steps.map((item) => (
+                  <li key={item}>
+                    <RichText text={item} />
+                  </li>
+                ))}
+              </ol>
+            )}
             {section.list && (
               <ul>
                 {section.list.map((item) => (
-                  <li key={item}>{item}</li>
+                  <li key={item}>
+                    <RichText text={item} />
+                  </li>
                 ))}
               </ul>
+            )}
+            {section.note && (
+              <p>
+                <RichText text={section.note} />
+              </p>
             )}
           </section>
         ))}

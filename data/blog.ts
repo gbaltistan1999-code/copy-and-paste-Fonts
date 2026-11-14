@@ -315,9 +315,9 @@ export const blogPosts: BlogPost[] = [
     author: "david",
     image: {
       src: "/blog/copy-and-paste-fonts-iphone-android-pc.png",
-      width: 1734,
-      height: 907,
-      alt: "How to copy and paste fonts on iPhone, Android and PC: a phone and a laptop showing fancy text, with Copy and Paste buttons between them.",
+      width: 1672,
+      height: 941,
+      alt: "Copy and paste fonts on iPhone, Android and PC: a laptop font generator with Copy buttons, an iPhone chat in cursive text and an Android bio in aesthetic fonts.",
     },
     excerpt:
       "Step-by-step instructions for iPhone, Android, Windows and Mac, plus what to do when fancy text shows up as boxes.",

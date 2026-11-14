@@ -1,5 +1,7 @@
 import { describe, expect, it } from "vitest";
 import { fontPages } from "@/data/pages";
+import { blogPosts } from "@/data/blog";
+import { linkedPaths } from "@/components/rich-text";
 import { homeSamples } from "@/data/home";
 import { getStyle } from "@/lib/styles";
 import { fontNav, platformNav } from "@/lib/site-config";
@@ -47,6 +49,16 @@ describe("font page content", () => {
       expect(p.faqs.length, p.slug).toBeGreaterThanOrEqual(4);
       expect(p.examples.length, p.slug).toBeGreaterThanOrEqual(4);
       expect(p.sections.length, p.slug).toBeGreaterThanOrEqual(3);
+    }
+  });
+
+  it("only links to pages that exist from section text", () => {
+    const paths = new Set(["/", ...fontPages.map((p) => `/${p.slug}`), ...blogPosts.map((p) => `/blog/${p.slug}`)]);
+    for (const p of fontPages) {
+      for (const s of p.sections) {
+        const texts = [...(s.paragraphs ?? []), ...(s.steps ?? []), ...(s.list ?? []), s.note ?? ""];
+        for (const href of texts.flatMap(linkedPaths)) expect(paths.has(href), `${p.slug} -> ${href}`).toBe(true);
+      }
     }
   });
 
