@@ -304,6 +304,53 @@ export const blogPosts: BlogPost[] = [
       },
     ],
   },
+  {
+    slug: "copy-and-paste-fonts-iphone-android-pc",
+    title: "How to Copy and Paste Fonts on iPhone, Android and PC",
+    description:
+      "Copy and paste fancy fonts on iPhone, Android, Windows and Mac in seconds. Easy steps, plus fixes when fonts show as boxes or question marks.",
+    h1: "How to Copy and Paste Fonts on iPhone, Android and PC",
+    datePublished: "2026-11-14",
+    dateModified: "2026-11-14",
+    author: "david",
+    image: {
+      src: "/blog/copy-and-paste-fonts-iphone-android-pc.png",
+      width: 1734,
+      height: 907,
+      alt: "How to copy and paste fonts on iPhone, Android and PC: a phone and a laptop showing fancy text, with Copy and Paste buttons between them.",
+    },
+    excerpt:
+      "Step-by-step instructions for iPhone, Android, Windows and Mac, plus what to do when fancy text shows up as boxes.",
+    faqs: [
+      {
+        question: "Do I need to download an app to copy and paste fonts?",
+        answer: "No. A web generator works in any browser on iPhone, Android, Windows and Mac. Nothing to install.",
+      },
+      {
+        question: "Why can't I change the font on Instagram itself?",
+        answer:
+          "Instagram only lets you pick fonts in Stories and Reels text. For bios, captions and comments, you paste Unicode letters from a generator.",
+      },
+      {
+        question: "Can other people see my fancy text?",
+        answer: "Yes, on most modern phones and computers. A few very old devices may show boxes instead.",
+      },
+      {
+        question: "Is it safe to copy and paste fonts?",
+        answer: "Yes. You're only copying text characters. No files or apps get installed.",
+      },
+      {
+        question: "Can I copy and paste fonts in my Instagram or TikTok username?",
+        answer:
+          "Not usually. Usernames only allow normal letters, numbers, periods and underscores. Use fancy text in your display name and bio instead.",
+      },
+      {
+        question: "Why does my fancy text look different on another phone?",
+        answer:
+          "Each phone draws Unicode symbols with its own system font. The style stays the same, but small details can look a little different.",
+      },
+    ],
+  },
 ];
 
 const bySlug = new Map(blogPosts.map((p) => [p.slug, p]));

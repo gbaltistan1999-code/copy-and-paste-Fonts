@@ -38,7 +38,7 @@ export default async function BlogPostPage({ params }: { params: Promise<Params>
   const content = postContent[slug];
   const author = post && getAuthor(post.author);
   if (!post || !content || !author) notFound();
-  const { Body, Closing } = content;
+  const { Body, closing } = content;
   const path = `/blog/${post.slug}`;
 
   return (
@@ -82,12 +82,12 @@ export default async function BlogPostPage({ params }: { params: Promise<Params>
 
       <Faq items={post.faqs} />
 
-      {Closing && (
+      {closing && (
         <section aria-labelledby="closing-heading" className="prose-content mt-12">
           <h2 id="closing-heading" className="!mt-0">
-            Find your caption and post it
+            {closing.heading}
           </h2>
-          <Closing />
+          <closing.Content />
         </section>
       )}
 
