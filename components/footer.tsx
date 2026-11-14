@@ -14,6 +14,16 @@ export function Footer() {
             Free copy and paste fonts made from Unicode characters. Your text is converted in your browser and never sent
             to our server.
           </p>
+          {/* Directory listing badge. Plain <img> because it's an external SVG the directory serves itself. */}
+          <a href="https://sellwithboost.com" target="_blank" rel="noopener noreferrer" className="mt-4 inline-block">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="https://sellwithboost.com/badge/listing.svg"
+              alt="Listed on Sell With boost"
+              loading="lazy"
+              style={{ height: 40, width: "auto" }}
+            />
+          </a>
         </div>
         <FooterGroup title="Font styles" links={fontNav} />
         <FooterGroup title="Platforms" links={[...platformNav, { href: "/", label: "All font styles" }]} />
